@@ -9,11 +9,11 @@ export default function About() {
 
   const content = {
     fr: {
-      title: "À Propos de SolarStock",
+      title: "À Propos de SolarInstall",
       description: "Votre partenaire de confiance pour l'énergie solaire",
       mission: "Notre mission",
       missionText:
-        "Chez SolarStock, notre mission est de rendre l'énergie solaire accessible à tous. Nous nous engageons à fournir des solutions d'énergie solaire de haute qualité et durables pour les particuliers et les entreprises.",
+        "Chez SolarInstall, notre mission est de rendre l'énergie solaire accessible à tous. Nous nous engageons à fournir des solutions d'énergie solaire de haute qualité et durables pour les particuliers et les entreprises.",
       experience: "Notre expérience",
       experienceText:
         "Avec plus de 10 ans d'expérience dans le domaine de l'énergie solaire, notre équipe d'experts qualifiés a installé avec succès des milliers de systèmes solaires à travers le pays. Notre expertise couvre tous les aspects de l'énergie solaire, de la conception initiale à l'installation et à la maintenance à long terme.",
@@ -48,7 +48,7 @@ export default function About() {
         },
       ],
       stats: {
-        title: "SolarStock en chiffres",
+        title: "SolarInstall en chiffres",
         items: [
           { value: "10k+", label: "Installations réalisées" },
           { value: "50MW+", label: "Capacité totale installée" },
@@ -61,11 +61,11 @@ export default function About() {
       },
     },
     nl: {
-      title: "Over SolarStock",
+      title: "Over SolarInstall",
       description: "Uw betrouwbare partner voor zonne-energie",
       mission: "Onze missie",
       missionText:
-        "Bij SolarStock is onze missie om zonne-energie toegankelijk te maken voor iedereen. We zetten ons in om hoogwaardige en duurzame zonne-energieoplossingen te leveren voor particulieren en bedrijven.",
+        "Bij SolarInstall is onze missie om zonne-energie toegankelijk te maken voor iedereen. We zetten ons in om hoogwaardige en duurzame zonne-energieoplossingen te leveren voor particulieren en bedrijven.",
       experience: "Onze ervaring",
       experienceText:
         "Met meer dan 10 jaar ervaring in de zonne-energiesector heeft ons team van gekwalificeerde experts met succes duizenden zonne-energiesystemen door het hele land geïnstalleerd. Onze expertise omvat alle aspecten van zonne-energie, van het initiële ontwerp tot installatie en langdurig onderhoud.",
@@ -100,7 +100,7 @@ export default function About() {
         },
       ],
       stats: {
-        title: "SolarStock in cijfers",
+        title: "SolarInstall in cijfers",
         items: [
           { value: "10k+", label: "Voltooide installaties" },
           { value: "50MW+", label: "Totale geïnstalleerde capaciteit" },
@@ -194,7 +194,7 @@ export default function About() {
         <div className="mt-12 relative h-64 rounded-lg overflow-hidden">
           <Image
             src="/images/solar-team.jpg"
-            alt="SolarStock Team"
+            alt="SolarInstall Team"
             layout="fill"
             objectFit="cover"
           />

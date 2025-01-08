@@ -26,7 +26,7 @@ export default function Home() {
 
   const content = {
     fr: {
-      title: "Libérez la Puissance du Soleil avec SolarStock",
+      title: "Libérez la Puissance du Soleil avec SolarInstall",
       description: "Transformez votre maison en centrale d'énergie propre",
       cta: "Découvrez nos services",
       benefitsTitle: "Avantages de l'Énergie Solaire",
@@ -39,7 +39,7 @@ export default function Home() {
       readyTitle: "Prêt à commencer?",
     },
     nl: {
-      title: "Ontgrendel de Kracht van de Zon met SolarStock",
+      title: "Ontgrendel de Kracht van de Zon met SolarInstall",
       description: "Transformeer uw huis in een schone energiecentrale",
       cta: "Ontdek onze diensten",
       benefitsTitle: "Voordelen van Zonne-energie",

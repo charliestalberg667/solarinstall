@@ -7,10 +7,10 @@ const Footer = () => {
 
   const content = {
     fr: {
-      copyright: "SolarStock. Tous droits réservés.",
+      copyright: "SolarInstall. Tous droits réservés.",
     },
     nl: {
-      copyright: "SolarStock. Alle rechten voorbehouden.",
+      copyright: "SolarInstall. Alle rechten voorbehouden.",
     },
   };
 

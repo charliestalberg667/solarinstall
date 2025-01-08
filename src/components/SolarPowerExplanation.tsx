@@ -54,7 +54,7 @@ export function SolarPowerExplanation() {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 lg:px-8 flex flex-col items-center gap-8">
       <div className="w-full text-center">
-        <h2 className="text-2xl lg:text-3xl font-bold text-black mb-6 whitespace-nowrap">
+        <h2 className="text-2xl lg:text-3xl font-bold text-black mb-6">
           {language === "fr"
             ? "Comment fonctionne l'énergie solaire ?"
             : "Hoe werkt zonne-energie?"}
