@@ -238,7 +238,7 @@ export default function Services() {
                   objectFit="cover"
                   className="rounded-t-lg lg:rounded-none"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-50"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-35"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <service.icon className="w-24 h-24 text-white" />
                 </div>
@@ -276,21 +276,26 @@ export default function Services() {
                       <Progress value={service.ecoFriendly} className="h-2" />
                     </div>
                   </div>
-                  <Button
-                    onClick={() => toggleService(index)}
-                    variant="outline"
-                    className="w-full mt-4"
-                  >
-                    {expandedServices.includes(index) ? (
-                      <>
-                        {collapse} <ChevronUp className="ml-2 h-4 w-4" />
-                      </>
-                    ) : (
-                      <>
-                        {learnMore} <ChevronDown className="ml-2 h-4 w-4" />
-                      </>
-                    )}
-                  </Button>
+                  <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <Button
+                      onClick={() => toggleService(index)}
+                      variant="outline"
+                      className="w-full sm:w-1/3 border-blue-500 border-2"
+                    >
+                      {expandedServices.includes(index) ? (
+                        <>
+                          {collapse} <ChevronUp className="ml-2 h-4 w-4" />
+                        </>
+                      ) : (
+                        <>
+                          {learnMore} <ChevronDown className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </Button>
+                    <Button className="w-full sm:w-1/3 bg-orange-500 hover:bg-orange-600 text-white">
+                      {service.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
                   <AnimatePresence>
                     {expandedServices.includes(index) && (
                       <motion.div
@@ -308,9 +313,6 @@ export default function Services() {
                             </li>
                           ))}
                         </ul>
-                        <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                          {service.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
                       </motion.div>
                     )}
                   </AnimatePresence>

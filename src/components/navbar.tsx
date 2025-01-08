@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
 
@@ -25,12 +24,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/images/logo.png"
-                alt="SolarStock Logo"
-                width={150}
-                height={50}
-              />
+              <span className="text-xl font-bold">SolarInstall</span>
             </Link>
           </div>
           <div className="hidden md:flex flex-grow justify-center">
@@ -54,7 +48,13 @@ const Navbar = () => {
               {language === "fr" ? "NL" : "FR"}
             </button>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={() => setLanguage(language === "fr" ? "nl" : "fr")}
+              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              {language === "fr" ? "NL" : "FR"}
+            </button>
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"

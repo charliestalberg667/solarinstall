@@ -8,7 +8,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SolarStock",
+  title: "SolarInstall",
   description:
     "Installation de systèmes solaires | Installatie van zonne-energiesystemen",
 };

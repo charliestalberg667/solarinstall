@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import React from "react";
-import {useLanguage} from "@/components/language-provider";
+import { useLanguage } from "@/components/language-provider";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -11,17 +11,17 @@ const Footer = () => {
     },
     nl: {
       copyright: "SolarStock. Alle rechten voorbehouden.",
-    }
-  }
+    },
+  };
 
-  const {
-    copyright
-  } = content[language];
+  const { copyright } = content[language];
 
   return (
-    <footer className="bg-gray-400 text-black py-6">
+    <footer className="bg-gray-300 text-black py-6">
       <div className="container mx-auto text-center">
-        <p>&copy; {new Date().getFullYear()} {copyright}</p>
+        <p>
+          &copy; {new Date().getFullYear()} {copyright}
+        </p>
         <div className="mt-4">
           <a href="/privacy-policy" className="hover:underline">
             Privacy Policy
