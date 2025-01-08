@@ -129,7 +129,7 @@ export default function About() {
   } = content[language];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900 dark:to-orange-900">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-6 text-center">{title}</h1>
         <p className="text-xl mb-12 text-center max-w-3xl mx-auto">

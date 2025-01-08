@@ -151,7 +151,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900 dark:to-orange-900 py-12">
+    <div className="min-h-screen bg-white py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold mb-6 text-center dark:text-white">
           {title}

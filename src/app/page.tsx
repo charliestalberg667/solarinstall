@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, Sun } from "lucide-react";
 import { VisuallyHidden } from "@reach/visually-hidden";
+import {BrandsScroll} from "@/components/brands-scroll";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -28,6 +29,7 @@ export default function Home() {
       description: "Transformez votre maison en centrale d'énergie propre",
       cta: "Découvrez nos services",
       galleryTitle: "Nos Réalisations Solaires",
+      brandsTitle: "Nos Marques Partenaires",
       benefitsTitle: "Avantages de l'Énergie Solaire",
       benefits: [
         "Économies d'énergie substantielles",
@@ -42,6 +44,7 @@ export default function Home() {
       description: "Transformeer uw huis in een schone energiecentrale",
       cta: "Ontdek onze diensten",
       galleryTitle: "Onze Zonne-installaties",
+      brandsTitle: "Onze Partnermerken",
       benefitsTitle: "Voordelen van Zonne-energie",
       benefits: [
         "Aanzienlijke energiebesparingen",
@@ -58,6 +61,7 @@ export default function Home() {
     description,
     cta,
     galleryTitle,
+    brandsTitle,
     benefitsTitle,
     benefits,
     readyTitle,
@@ -95,23 +99,20 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-100 to-orange-300 dark:from-yellow-900 dark:to-orange-900">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="relative mb-16">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-64 h-64 bg-yellow-500 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
-          </div>
           <div className="relative z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-orange-900 dark:text-yellow-100">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-orange-800 dark:text-yellow-200">
+            <p className="text-xl md:text-2xl mb-8 text-black">
               {description}
             </p>
             <Link href="/services">
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white"
+                className="bg-blue-950 hover:bg-blue-900 text-white rounded-lg"
               >
                 {cta}
               </Button>
@@ -120,7 +121,7 @@ export default function Home() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-6 text-center text-orange-900 dark:text-yellow-100">
+          <h2 className="text-3xl font-semibold mb-6 text-center text-orange-900">
             {galleryTitle}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -137,7 +138,8 @@ export default function Home() {
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                <div
+                  className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
                   <Sun
                     className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     size={48}
@@ -149,17 +151,17 @@ export default function Home() {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-semibold mb-6 text-orange-900 dark:text-yellow-100">
+          <h2 className="text-3xl font-semibold mb-6 text-orange-900">
             {benefitsTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center space-x-4"
+                className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4"
               >
-                <Sun className="text-yellow-500" size={32} />
-                <p className="text-lg text-orange-900 dark:text-yellow-100">
+                <Sun className="text-yellow-500" size={32}/>
+                <p className="text-lg text-orange-900">
                   {benefit}
                 </p>
               </div>
@@ -167,11 +169,18 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-6 text-center text-orange-900">
+            {brandsTitle}
+          </h2>
+          <BrandsScroll/>
+        </div>
+
         <div className="text-center">
-          <h2 className="text-3xl font-semibold mb-6 text-orange-900 dark:text-yellow-100">
+          <h2 className="text-3xl font-semibold mb-6 text-orange-900">
             {readyTitle}
           </h2>
-          <Link href="/contact">
+          <Link href="/services">
             <Button
               size="lg"
               className="bg-orange-500 hover:bg-orange-600 text-white"
@@ -183,7 +192,7 @@ export default function Home() {
       </div>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-3xl w-full bg-white dark:bg-gray-800">
+        <DialogContent className="max-w-3xl w-full bg-white">
           <DialogTitle>
             <VisuallyHidden>Image Dialog</VisuallyHidden>
           </DialogTitle>
@@ -195,14 +204,14 @@ export default function Home() {
               height={600}
               className="w-full h-auto"
             />
-            <DialogClose />
+            <DialogClose/>
           </div>
           <div className="flex justify-between mt-4">
             <Button variant="outline" onClick={showPrevImage}>
-              <ChevronLeft size={24} />
+              <ChevronLeft size={24}/>
             </Button>
             <Button variant="outline" onClick={showNextImage}>
-              <ChevronRight size={24} />
+              <ChevronRight size={24}/>
             </Button>
           </div>
         </DialogContent>
