@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
-import { FR, NL } from 'country-flag-icons/react/3x2'
+import { FR, NL } from "country-flag-icons/react/3x2";
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();
@@ -48,12 +48,12 @@ const Navbar = () => {
             >
               {language === "fr" ? (
                 <>
-                  <NL title="Netherlands" className="w-6 h-6"/>
+                  <NL title="Netherlands" className="w-6 h-6" />
                   <span>NL</span>
                 </>
               ) : (
                 <>
-                  <FR title="France" className="w-6 h-6"/>
+                  <FR title="France" className="w-6 h-6" />
                   <span>FR</span>
                 </>
               )}
@@ -66,12 +66,12 @@ const Navbar = () => {
             >
               {language === "fr" ? (
                 <>
-                  <NL title="Netherlands" className="w-6 h-6"/>
+                  <NL title="Netherlands" className="w-6 h-6" />
                   <span>NL</span>
                 </>
               ) : (
                 <>
-                  <FR title="France" className="w-6 h-6"/>
+                  <FR title="France" className="w-6 h-6" />
                   <span>FR</span>
                 </>
               )}
