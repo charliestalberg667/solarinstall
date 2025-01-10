@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
+import { FR, NL } from 'country-flag-icons/react/3x2'
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();
@@ -13,13 +14,13 @@ const Navbar = () => {
 
   const navItems = [
     { href: "/", label: language === "fr" ? "Accueil" : "Home" },
-    { href: "/services", label: language === "fr" ? "Services" : "Diensten" },
+    // { href: "/services", label: language === "fr" ? "Services" : "Diensten" },
     { href: "/about", label: language === "fr" ? "À propos" : "Over ons" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -43,17 +44,37 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-2">
             <button
               onClick={() => setLanguage(language === "fr" ? "nl" : "fr")}
-              className="p-2 rounded-md text-black hover:text-gray-800"
+              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
-              {language === "fr" ? "NL" : "FR"}
+              {language === "fr" ? (
+                <>
+                  <NL title="Netherlands" className="w-6 h-6"/>
+                  <span>NL</span>
+                </>
+              ) : (
+                <>
+                  <FR title="France" className="w-6 h-6"/>
+                  <span>FR</span>
+                </>
+              )}
             </button>
           </div>
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={() => setLanguage(language === "fr" ? "nl" : "fr")}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
-              {language === "fr" ? "NL" : "FR"}
+              {language === "fr" ? (
+                <>
+                  <NL title="Netherlands" className="w-6 h-6"/>
+                  <span>NL</span>
+                </>
+              ) : (
+                <>
+                  <FR title="France" className="w-6 h-6"/>
+                  <span>FR</span>
+                </>
+              )}
             </button>
             <button
               onClick={toggleMenu}
