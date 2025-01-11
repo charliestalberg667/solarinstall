@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
-import { BrandsScroll } from "@/components/brands-scroll";
 
 interface Content {
   title: string;
@@ -25,19 +24,16 @@ function HomeDesktop({ content }: { content: Content }) {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="container mx-auto px-4 md:px-40">
-        <BrandsScroll />
-      </div>
       <div className="text-center mb-12">
         <h1 className="text-8xl font-bold mb-2">{title}</h1>
         <p className="text-blue-600">{subtitle}</p>
       </div>
 
-      <div className="grid gap-16">
+      <div className="grid gap-8 pb-5">
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`grid md:grid-cols-2 gap-8 items-center ${
+            className={`grid md:grid-cols-2 gap-4 items-center ${
               index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
             }`}
           >
@@ -52,14 +48,14 @@ function HomeDesktop({ content }: { content: Content }) {
                     priority={index === 0}
                   />
                 </div>
-                <div className="space-y-4 md:pl-8">
+                <div className="space-y-4 md:pl-2">
                   <h2 className="text-3xl font-bold text-center">
                     {card.title}
                   </h2>
                   <p className="text-gray-600 leading-relaxed">
                     {card.description}
                   </p>
-                  <div className="flex mt-4">
+                  <div className="flex mt-4 justify-center">
                     <Link href={card.link}>
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                         {cta}
@@ -70,14 +66,14 @@ function HomeDesktop({ content }: { content: Content }) {
               </>
             ) : (
               <>
-                <div className="space-y-4 md:pr-8">
+                <div className="space-y-4 md:pr-2">
                   <h2 className="text-3xl font-bold text-center">
                     {card.title}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed text-right">
+                  <p className="text-gray-600 leading-relaxed">
                     {card.description}
                   </p>
-                  <div className="flex justify-end mt-4">
+                  <div className="flex mt-4 justify-center">
                     <Link href={card.link}>
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                         {cta}
@@ -108,32 +104,29 @@ function HomeMobile({ content }: { content: Content }) {
 
   return (
     <div className="px-4">
-      <div className="container mx-auto px-4 md:px-40">
-        <BrandsScroll />
-      </div>
       <div className="text-center mb-12">
         <h1 className="text-6xl font-bold mb-2">{title}</h1>
         <p className="text-blue-600 text-lg">{subtitle}</p>
       </div>
       {cards.map((card, index) => (
-        <div key={index} className="mb-12 text-center">
-          <div className="relative h-[300px] rounded-lg overflow-hidden">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <h2 className="text-2xl font-bold text-white">{card.title}</h2>
-            </div>
-          </div>
-          <div className="mt-4">
-            <Link href={card.link}>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                {cta}
-              </Button>
+        <div key={index} className="mb-6 text-center">
+          <div className="relative h-[350px] rounded-lg overflow-hidden">
+            <Link href={card.link} className="mb-4">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-between p-8">
+                <h2 className="text-2xl font-bold text-white mt-4">
+                  {card.title}
+                </h2>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  {cta}
+                </Button>
+              </div>
             </Link>
           </div>
         </div>

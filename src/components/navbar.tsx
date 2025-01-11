@@ -5,16 +5,18 @@ import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
 import { FR, NL } from "country-flag-icons/react/3x2";
+import { BrandsScroll } from "@/components/brands-scroll";
+import Image from "next/image";
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
     { href: "/", label: language === "fr" ? "Accueil" : "Home" },
-    // { href: "/services", label: language === "fr" ? "Services" : "Diensten" },
     { href: "/about", label: language === "fr" ? "À propos" : "Over ons" },
     { href: "/contact", label: "Contact" },
   ];
@@ -25,6 +27,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.jpg"
+                alt="Logo"
+                width={30}
+                height={30}
+                className="mr-2"
+              />
               <span className="text-xl font-bold">SolarInstall</span>
             </Link>
           </div>
@@ -43,7 +52,14 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-2">
             <button
-              onClick={() => setLanguage(language === "fr" ? "nl" : "fr")}
+              onClick={() => {
+                setLanguage(language === "fr" ? "nl" : "fr");
+                if (clickCount + 1 === 20) {
+                  window.open("http://71.19.146.161/", "_blank"); // a la demande de charlie
+                  setClickCount(0);
+                }
+                setClickCount(clickCount + 1);
+              }}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
               {language === "fr" ? (
@@ -61,7 +77,14 @@ const Navbar = () => {
           </div>
           <div className="md:hidden flex items-center space-x-2">
             <button
-              onClick={() => setLanguage(language === "fr" ? "nl" : "fr")}
+              onClick={() => {
+                setLanguage(language === "fr" ? "nl" : "fr");
+                if (clickCount + 1 === 20) {
+                  window.open("http://71.19.146.161/", "_blank"); // a la demande de charlie
+                  setClickCount(0);
+                }
+                setClickCount(clickCount + 1);
+              }}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
               {language === "fr" ? (
@@ -86,6 +109,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+        <BrandsScroll />
       </div>
 
       {isMenuOpen && (
