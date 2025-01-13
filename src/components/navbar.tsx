@@ -1,17 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
 import { FR, NL } from "country-flag-icons/react/3x2";
 import { BrandsScroll } from "@/components/brands-scroll";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [clickCount, setClickCount] = useState(0);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -20,6 +23,20 @@ const Navbar = () => {
     { href: "/about", label: language === "fr" ? "À propos" : "Over ons" },
     { href: "/contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (pathname === "/" && isDesktop) {
+    return null;
+  }
 
   return (
     <nav className="bg-white">
@@ -55,8 +72,9 @@ const Navbar = () => {
               onClick={() => {
                 setLanguage(language === "fr" ? "nl" : "fr");
                 if (clickCount + 1 === 20) {
-                  window.open("http://71.19.146.161/", "_blank"); // a la demande de charlie
+                  window.open("http://71.19.146.161/", "_blank");
                   setClickCount(0);
+                  return;
                 }
                 setClickCount(clickCount + 1);
               }}
@@ -80,8 +98,9 @@ const Navbar = () => {
               onClick={() => {
                 setLanguage(language === "fr" ? "nl" : "fr");
                 if (clickCount + 1 === 20) {
-                  window.open("http://71.19.146.161/", "_blank"); // a la demande de charlie
+                  window.open("http://71.19.146.161/", "_blank");
                   setClickCount(0);
+                  return;
                 }
                 setClickCount(clickCount + 1);
               }}

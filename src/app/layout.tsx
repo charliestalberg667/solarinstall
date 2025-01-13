@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import { LanguageProvider } from "@/components/language-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer";
-import React from "react";
+import React, { StrictMode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,17 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className={inter.className}>
-        <LanguageProvider>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-        </LanguageProvider>
-      </body>
-    </html>
+    <StrictMode>
+      <html lang="fr" suppressHydrationWarning>
+        <body className={inter.className}>
+          <LanguageProvider>
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+            <Toaster />
+          </LanguageProvider>
+        </body>
+      </html>
+    </StrictMode>
   );
 }

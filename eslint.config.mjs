@@ -14,7 +14,11 @@ const eslintConfig = [
 ];
 
 eslintConfig.push({
-  ignores: ["src/components/ui/*", "src/hooks/*"],
+  ignores: [
+    "src/components/ui/*",
+    "src/hooks/*",
+    "src/components/solar-panel-ripple-effect/model.tsx",
+  ],
 });
 
 export default eslintConfig;

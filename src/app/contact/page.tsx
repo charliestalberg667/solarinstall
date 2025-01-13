@@ -72,25 +72,36 @@ export default function Contact() {
     contactInfo,
   } = content[language];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const triggerError =
-      process.env.NEXT_PUBLIC_TRIGGER_CONTACT_ERROR_MESSAGE === "true";
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    if (triggerError) {
+      if (response.ok) {
+        toast({
+          title: successMessage,
+          description: "Thank you for reaching out!",
+        });
+        // setName("");
+        // setEmail("");
+        // setMessage("");
+      } else {
+        const errorData = await response.json();
+        toast({
+          title: errorMessage,
+          description: errorData.message || "Something went wrong.",
+        });
+      }
+    } catch {
       toast({
         title: errorMessage,
-        description: "An error occurred while sending your message.",
+        description: "An unexpected error occurred. Please try again.",
       });
-    } else {
-      toast({
-        title: successMessage,
-        description: `Name: ${name}, Email: ${email}`,
-      });
-      setName("");
-      setEmail("");
-      setMessage("");
     }
   };
 

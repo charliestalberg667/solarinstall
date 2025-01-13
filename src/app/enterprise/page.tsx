@@ -24,7 +24,7 @@ interface CTA {
   button: string;
 }
 
-function HomeDesktop({ content }: { content: Content }) {
+function EnterpriseDesktop({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
   return (
@@ -96,7 +96,7 @@ function HomeDesktop({ content }: { content: Content }) {
   );
 }
 
-function HomeMobile({ content }: { content: Content }) {
+function EnterpriseMobile({ content }: { content: Content }) {
   const { title, subtitle, cards, cta } = content;
 
   return (
@@ -131,7 +131,7 @@ function HomeMobile({ content }: { content: Content }) {
   );
 }
 
-export default function Home() {
+export default function Enterprise() {
   const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -209,8 +209,8 @@ export default function Home() {
 
   const currentContent = content[language];
   return isDesktop ? (
-    <HomeDesktop content={currentContent} />
+    <EnterpriseDesktop content={currentContent} />
   ) : (
-    <HomeMobile content={currentContent} />
+    <EnterpriseMobile content={currentContent} />
   );
 }
