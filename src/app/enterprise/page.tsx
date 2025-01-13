@@ -122,7 +122,7 @@ function EnterpriseMobile({ content }: { content: Content }) {
           </div>
         </div>
       ))}
-      <PowerCTAEnterprise/>
+      <PowerCTAEnterprise />
     </div>
   );
 }

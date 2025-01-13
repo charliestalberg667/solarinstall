@@ -122,7 +122,7 @@ function IndustrialMobile({ content }: { content: Content }) {
           </div>
         </div>
       ))}
-      <PowerCTAIndustrial/>
+      <PowerCTAIndustrial />
     </div>
   );
 }
