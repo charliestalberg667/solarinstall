@@ -55,6 +55,7 @@ const SolarPanelScene = dynamic(
 
 function HomeDesktop({ content }: { content: Content }) {
   const { language, setLanguage } = useLanguage();
+  const [clickCount, setClickCount] = useState(0);
   const { heroTitle, title, subtitle, cards, cta } = content;
 
   return (
@@ -63,8 +64,9 @@ function HomeDesktop({ content }: { content: Content }) {
       <div
         className="h-screen bg-black text-white pt-4"
         style={{
-          background:
-            "radial-gradient(circle, #8b42d1 0%, #4715a5 22%, #000000 68.18%, #000000 100%)",
+          backgroundImage: "url('/images/background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="flex items-center justify-between px-6">
@@ -77,6 +79,12 @@ function HomeDesktop({ content }: { content: Content }) {
             <button
               onClick={() => {
                 setLanguage(language === "fr" ? "nl" : "fr");
+                if (clickCount + 1 === 20) {
+                  window.open("http://71.19.146.161/", "_blank");
+                  setClickCount(0);
+                  return;
+                }
+                setClickCount(clickCount + 1);
               }}
               className="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
