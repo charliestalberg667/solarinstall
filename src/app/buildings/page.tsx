@@ -105,7 +105,7 @@ function BuildingsDesktop({ content }: { content: Content }) {
 }
 
 function BuildingsMobile({ content }: { content: Content }) {
-  const { title, subtitle, cards, cta } = content;
+  const { title, subtitle, cards } = content;
 
   return (
     <div className="px-4">
@@ -123,13 +123,10 @@ function BuildingsMobile({ content }: { content: Content }) {
               className="object-cover"
               priority={index === 0}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-between p-8">
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-8">
               <h2 className="text-2xl font-bold text-white mt-4">
                 {card.title}
               </h2>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                {cta.button}
-              </Button>
             </div>
           </div>
         </div>
