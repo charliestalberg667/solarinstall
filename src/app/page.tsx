@@ -58,6 +58,16 @@ function HomeDesktop({ content }: { content: Content }) {
   const [clickCount, setClickCount] = useState(0);
   const { heroTitle, title, subtitle, cards, cta } = content;
 
+  const onLanguageChange = () => {
+    setLanguage(language === "fr" ? "nl" : "fr");
+    if (clickCount + 1 === 20) {
+      window.open("http://71.19.146.161/", "_blank");
+      setClickCount(0);
+      return;
+    }
+    setClickCount(clickCount + 1);
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -77,15 +87,7 @@ function HomeDesktop({ content }: { content: Content }) {
           </div>
           <div className="text-lg">
             <button
-              onClick={() => {
-                setLanguage(language === "fr" ? "nl" : "fr");
-                if (clickCount + 1 === 20) {
-                  window.open("http://71.19.146.161/", "_blank");
-                  setClickCount(0);
-                  return;
-                }
-                setClickCount(clickCount + 1);
-              }}
+              onClick={onLanguageChange}
               className="p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
               {language === "fr" ? (

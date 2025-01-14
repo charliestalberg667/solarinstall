@@ -38,6 +38,16 @@ const Navbar = () => {
     return null;
   }
 
+  const onLanguageChange = () => {
+    setLanguage(language === "fr" ? "nl" : "fr");
+    if (clickCount + 1 === 20) {
+      window.open("http://71.19.146.161/", "_blank");
+      setClickCount(0);
+      return;
+    }
+    setClickCount(clickCount + 1);
+  };
+
   return (
     <nav className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,15 +79,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-2">
             <button
-              onClick={() => {
-                setLanguage(language === "fr" ? "nl" : "fr");
-                if (clickCount + 1 === 20) {
-                  window.open("http://71.19.146.161/", "_blank");
-                  setClickCount(0);
-                  return;
-                }
-                setClickCount(clickCount + 1);
-              }}
+              onClick={onLanguageChange}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
             >
               {language === "fr" ? (
