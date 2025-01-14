@@ -239,76 +239,76 @@ export default function Home() {
 
   const content = {
     fr: {
-      heroTitle: "liberez la puissance du soleil avec SolarInstall",
+      heroTitle: "Libérez le potentiel du soleil avec SolarInstall",
       title: "SolarInstall",
-      subtitle: "Votre partenaire pour l'énergie solaire",
+      subtitle: "Votre expert en énergie solaire",
       cards: [
         {
-          title: "Installation Solaire pour Domicile",
+          title: "Solutions solaires pour votre domicile",
           description:
-            "Nous offrons des solutions solaires sur mesure pour les particuliers. Nos experts installent des panneaux solaires sur tout type de toit et placent des onduleurs hybrides avec des fonctions de gestion intelligentes. Vous pouvez suivre votre consommation d'énergie facilement via une application pratique. De plus, nous installons des bornes de recharge et nous nous occupons du nettoyage et de l'entretien de votre installation. Optez pour une énergie durable et une facture énergétique réduite.",
+            "Transformez votre maison avec nos solutions solaires personnalisées. Nos experts installent des panneaux solaires adaptés à tous les types de toits et intègrent des onduleurs hybrides avec des fonctionnalités de gestion intelligente. Suivez votre consommation énergétique via une application intuitive. Nous installons également des bornes de recharge et assurons le nettoyage et l'entretien de vos équipements. Réduisez vos factures tout en adoptant une énergie durable.",
           image: "/images/residential.jpg",
           link: "/residential",
         },
         {
-          title: "Installation Solaire pour Immeuble",
+          title: "Systèmes solaires pour immeubles",
           description:
-            "Optimisez la gestion énergétique de votre bâtiment avec nos solutions. Nous calculons votre installation solaire sur mesure et l'installons sur tout type de toit. Avec nos onduleurs intelligents, vous pouvez effectuer une surveillance en temps réel via une application. Nous installons des bornes de recharge et offrons des services de maintenance et de nettoyage pour vos panneaux solaires. Ensemble, nous assurons une énergie durable pour tous les résidents.",
+            "Optimisez la gestion énergétique de votre immeuble avec nos solutions sur mesure. Nos experts conçoivent et installent des systèmes solaires adaptés à tous les types de toits. Grâce à nos onduleurs intelligents, vous pouvez suivre vos données en temps réel via une application pratique. En plus de l'installation de bornes de recharge, nous offrons des services de maintenance et de nettoyage pour garantir des performances optimales. Favorisez une énergie verte pour tous les résidents.",
           image: "/images/building.jpg",
           link: "/buildings",
         },
         {
-          title: "Installation Solaire pour Entreprise",
+          title: "Solutions énergétiques pour entreprises",
           description:
-            "Les entreprises bénéficient de solutions énergétiques puissantes sur mesure. Nous fournissons des onduleurs jusqu'à 200 kW et des batteries jusqu'à 250 kWh, parfaits pour une utilisation à grande échelle. Nos systèmes incluent des fonctions de sauvegarde et de gestion dynamique des tarifs pour optimiser les coûts. De plus, nous installons des bornes de recharge et des carports solaires pour vos employés et votre flotte de véhicules. Réduisez vos coûts énergétiques et augmentez votre efficacité.",
+            "Propulsez votre entreprise avec nos systèmes énergétiques de haute performance. Nous proposons des onduleurs allant jusqu'à 200 kW et des batteries jusqu'à 250 kWh, idéaux pour des applications à grande échelle. Nos solutions incluent des fonctions de sauvegarde et une gestion dynamique des tarifs pour réduire vos coûts. Nous installons également des bornes de recharge et des carports solaires pour vos équipes et flottes de véhicules. Adoptez l'efficacité énergétique et économisez.",
           image: "/images/enterprise.png",
           link: "/enterprise",
         },
         {
-          title: "Installation Solaire pour Industrie",
+          title: "Systèmes solaires pour l'industrie",
           description:
-            "Optimisez la gestion énergétique de votre installation industrielle avec nos solutions. Nous proposons des systèmes sur mesure pour vos besoins spécifiques. Nos onduleurs intelligents permettent une surveillance en temps réel via une application. Nous installons des bornes de recharge et offrons des services de maintenance et de nettoyage pour vos panneaux solaires. Ensemble, nous assurons une énergie durable pour tous les résidents.",
+            "Boostez la productivité énergétique de votre installation industrielle grâce à nos solutions sur mesure. Nous concevons des systèmes adaptés à vos besoins spécifiques, intégrant des onduleurs intelligents pour une surveillance en temps réel via une application. En complément, nous installons des bornes de recharge et assurons l'entretien de vos panneaux solaires. Ensemble, nous bâtissons un avenir énergétique durable pour votre industrie.",
           image: "/images/industrial.jpg",
           link: "/industrial",
         },
       ],
-      cta: "Plus d'informations",
+      cta: "En savoir plus",
     },
     nl: {
-      heroTitle: "ontketen de kracht van de zon met SolarInstall",
+      heroTitle: "Ontketen de kracht van de zon met SolarInstall",
       title: "SolarInstall",
-      subtitle: "Uw partner voor zonne-energie",
+      subtitle: "Uw specialist in zonne-energie",
       cards: [
         {
-          title: "Zonne-installatie voor thuis",
+          title: "Zonne-oplossingen voor thuis",
           description:
-            "Wij bieden op maat gemaakte zonne-oplossingen voor particulieren. Onze experts installeren zonnepanelen op elk type dak en plaatsen hybride omvormers met slimme beheerfuncties. U kunt uw energieverbruik eenvoudig volgen via een handige app. Daarnaast installeren wij laadpalen en verzorgen wij het reinigen en onderhouden van uw installatie. Kies voor duurzame energie en een lagere energierekening.",
+            "Haal meer uit uw woning met onze op maat gemaakte zonne-oplossingen. Onze specialisten installeren zonnepanelen op elk type dak en voegen hybride omvormers met slimme functies toe. Uw energieverbruik is eenvoudig te monitoren via een gebruiksvriendelijke app. We installeren laadpalen en verzorgen het onderhoud en de reiniging van uw installatie. Kies voor duurzame energie en lagere energiekosten.",
           image: "/images/residential.jpg",
           link: "/residential",
         },
         {
-          title: "Zonne-installatie voor flatgebouw",
+          title: "Zonnepanelen voor flatgebouwen",
           description:
-            "Optimaliseer het energiebeheer van uw gebouw met onze oplossingen. Wij berekenen uw zonne-installatie op maat en installeren deze op elk type dak. Met onze slimme omvormers kunt u realtime monitoring uitvoeren via een app. We plaatsen laadpalen en bieden onderhouds- en reinigingsservices voor uw zonnepanelen. Samen zorgen we voor duurzame energie voor alle bewoners.",
+            "Verbeter het energiebeheer van uw flatgebouw met onze op maat gemaakte oplossingen. Wij ontwerpen en installeren zonne-installaties op elk type dak. Onze slimme omvormers maken realtime monitoring mogelijk via een handige app. Bovendien installeren we laadpalen en bieden we onderhouds- en reinigingsservices om de prestaties te garanderen. Samen creëren we een duurzame toekomst voor alle bewoners.",
           image: "/images/building.jpg",
           link: "/buildings",
         },
         {
-          title: "Zonne-installatie voor bedrijf",
+          title: "Zonnestroomoplossingen voor bedrijven",
           description:
-            "Bedrijven profiteren van krachtige energieoplossingen op maat. Wij leveren omvormers tot 200 kW en batterijen tot 250 kWh, perfect voor grootschalig gebruik. Onze systemen bevatten back-up functies en dynamisch tariefbeheer om kosten te optimaliseren. Daarnaast plaatsen we laadpalen en zonnecarports voor uw werknemers en wagenpark. Verlaag uw energiekosten en verhoog uw efficiëntie.",
+            "Stimuleer uw bedrijf met krachtige zonne-energieoplossingen. Wij leveren omvormers tot 200 kW en batterijen tot 250 kWh, geschikt voor grootschalige toepassingen. Onze systemen bieden back-up functies en dynamisch tariefbeheer om kosten te optimaliseren. Daarnaast installeren we laadpalen en zonnecarports voor uw medewerkers en wagenpark. Verhoog uw efficiëntie en bespaar op energiekosten.",
           image: "/images/enterprise.png",
           link: "/enterprise",
         },
         {
-          title: "Zonne-installatie voor industrie",
+          title: "Zonne-installaties voor industrie",
           description:
-            "Optimaliseer het energiebeheer van uw gebouw met onze oplossingen. Wij berekenen uw zonne-installatie op maat en installeren deze op elk type dak. Met onze slimme omvormers kunt u realtime monitoring uitvoeren via een app. We plaatsen laadpalen en bieden onderhouds- en reinigingsservices voor uw zonnepanelen. Samen zorgen we voor duurzame energie voor alle bewoners.",
+            "Verhoog de efficiëntie van uw industriële energiebeheer met onze oplossingen op maat. Wij ontwerpen systemen volgens uw behoeften en integreren slimme omvormers voor realtime monitoring via een app. Onze diensten omvatten ook de installatie van laadpalen en het onderhoud van zonnepanelen. Samen werken we aan een duurzame energievoorziening voor uw industrie.",
           image: "/images/industrial.jpg",
           link: "/industrial",
         },
       ],
-      cta: "Meer informatie",
+      cta: "Meer weten",
     },
   };
 
