@@ -24,11 +24,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-300 text-black py-6">
-      <div className="container mx-auto text-center">
-        <p>
+      <div className="container mx-auto text-center px-4">
+        <p className="text-sm md:text-base">
           &copy; {new Date().getFullYear()} {copyright}
         </p>
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className="mt-4 flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
           <a href="/conditions" className="hover:underline">
             {conditions}
           </a>

@@ -87,9 +87,9 @@ export default function Contact() {
           title: successMessage,
           description: "Thank you for reaching out!",
         });
-        // setName("");
-        // setEmail("");
-        // setMessage("");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
         const errorData = await response.json();
         toast({

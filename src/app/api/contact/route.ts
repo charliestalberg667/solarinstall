@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,26 +12,21 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.BUSINESS_EMAIL,
-        pass: process.env.BUSINESS_EMAIL_PASSWORD,
-      },
-    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const mailOptions = {
-      from: process.env.BUSINESS_EMAIL,
-      to: process.env.BUSINESS_EMAIL,
-      replyTo: email,
+      from: "SolarInstall Contact <onboarding@resend.dev>",
+      //to: process.env.BUSINESS_EMAIL as string,
+      to: "gst@solarstock.be",
+      reply_to: email,
       subject: `SolarInstall Contact (${name}, ${email})`,
       text: `SolarInstall Contact (${name}, ${email})\nMESSAGE UNDERNEATH THIS LINE\n-------------------------------------\n\n${message}`,
     };
 
-    await transporter.sendMail(mailOptions);
-
+    const { error } = await resend.emails.send(mailOptions);
+    if (error) {
+      throw error;
+    }
     return NextResponse.json(
       { message: "Email sent successfully!" },
       { status: 200 },

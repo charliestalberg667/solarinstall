@@ -12,6 +12,8 @@ export const metadata = {
   title: "SolarInstall",
   description:
     "Installation de systèmes solaires | Installatie van zonne-energiesystemen",
+  keywords: "solaire, installation solaire, énergie renouvelable, panneaux solaires, solutions énergétiques, énergie durable, énergie verte, zonne-energie, zonne-installatie, hernieuwbare energie, zonnepanelen, energieoplossingen, duurzame energie, groene energie",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
