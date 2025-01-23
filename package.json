@@ -13,8 +13,6 @@
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.4",
-    "@react-three/drei": "^9.120.7",
-    "@react-three/fiber": "^9.0.0-alpha.8",
     "@types/nodemailer": "^6.4.17",
     "@types/three": "^0.172.0",
     "class-variance-authority": "^0.7.1",
@@ -27,8 +25,7 @@
     "react-dom": "19.0.0",
     "react-fast-marquee": "^1.6.5",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.172.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
