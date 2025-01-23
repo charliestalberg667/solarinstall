@@ -58,8 +58,8 @@ export default function Model() {
       mesh.position.y = y;
       mesh.visible = true;
       mesh.material.opacity = 1;
-      mesh.scale.x = 1.75;
-      mesh.scale.y = 1.75;
+      mesh.scale.x = 1.25;
+      mesh.scale.y = 1.25;
     }
   }
 
