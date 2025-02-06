@@ -1,15 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
-import { Button } from "@/components/ui/button";
+import { PowerCTA, PowerCTAMobile } from "@/components/power-cta";
 
 interface Content {
   title: string;
   subtitle: string;
   cards: Card[];
-  cta: CTA;
 }
 
 interface Card {
@@ -18,25 +16,14 @@ interface Card {
   image: string;
 }
 
-interface CTA {
-  title: string;
-  description: string;
-  button: string;
-}
-
 function ResidentialDesktop({ content }: { content: Content }) {
-  const { title, subtitle, cards, cta } = content;
+  const { title, subtitle, cards } = content;
 
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-2 text-blue-600">{title}</h1>
         <p className="text-xl">{subtitle}</p>
-        <p>
-          Chaque maison est unique. Notre équipe technique conçoit une
-          installation solaire parfaitement adaptée à votre consommation et à
-          votre toit.
-        </p>
       </div>
 
       <div className="grid gap-8 pb-5">
@@ -58,24 +45,26 @@ function ResidentialDesktop({ content }: { content: Content }) {
                     priority={index === 0}
                   />
                 </div>
-                <div className="space-y-4 md:pl-2">
+                <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
                   <h2 className="text-3xl font-bold text-center">
                     {card.title}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-800 leading-relaxed text-justify">
                     {card.description}
                   </p>
+                  <div></div>
                 </div>
               </>
             ) : (
               <>
-                <div className="space-y-4 md:pr-2">
-                  <h2 className="text-3xl font-bold text-center">
+                <div className="flex flex-col h-full justify-between md:px-4 py-8">
+                  <h2 className="text-3xl font-bold text-center ">
                     {card.title}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-800 leading-relaxed text-justify">
                     {card.description}
                   </p>
+                  <div></div>
                 </div>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
                   <Image
@@ -90,50 +79,56 @@ function ResidentialDesktop({ content }: { content: Content }) {
             )}
           </div>
         ))}
-        <div className="mt-16 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg p-8 text-center shadow-lg">
-          <h2 className="text-4xl font-bold mb-4">{cta.title}</h2>
-          <p className="text-xl mb-6">{cta.description}</p>
-          <Link href="/contact">
-            <Button className="bg-white text-blue-700 hover:bg-gray-200 text-lg px-8 py-3">
-              {cta.button}
-            </Button>
-          </Link>
-        </div>
+        <PowerCTA />
       </div>
     </div>
   );
 }
 
-function ResidentialMobile({ content }: { content: Content }) {
+const ResidentialMobile = ({ content }: { content: Content }) => {
   const { title, subtitle, cards } = content;
 
   return (
-    <div className="px-4">
-      <div className="text-center mb-12">
-        <h1 className="text-6xl font-bold mb-2">{title}</h1>
-        <p className="text-blue-600 text-lg">{subtitle}</p>
-      </div>
-      {cards.map((card, index) => (
-        <div key={index} className="mb-6 text-center">
-          <div className="relative h-[350px] rounded-lg overflow-hidden">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-8">
-              <h2 className="text-2xl font-bold text-white mt-4">
-                {card.title}
-              </h2>
-            </div>
-          </div>
+    <div>
+      <div id="content-section" className="container mx-auto px-4">
+        <div className="text-center mb-7">
+          <h1 className="text-4xl font-bold">{title}</h1>
+          <p className="text-sm text-blue-600">{subtitle}</p>
         </div>
-      ))}
+
+        <div className="grid gap-8 pb-5">
+          {cards.map((card, index) => (
+            <div key={index} className="grid gap-4 items-center">
+              <div className="relative h-[300px] rounded-lg overflow-hidden">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  layout="fill"
+                  className="object-cover"
+                  priority={index === 0}
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
+                  <h2 className="text-xl font-bold text-white text-center">
+                    {card.title}
+                  </h2>
+                </div>
+              </div>
+              <div className="flex flex-col h-full justify-between px-4 py-4">
+                <p className="text-gray-800 text-justify leading-relaxed">
+                  {card.description}
+                </p>
+                <div className="flex mt-4 justify-center">
+                  {/* Additional content could go here */}
+                </div>
+              </div>
+            </div>
+          ))}
+          <PowerCTAMobile />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default function Residential() {
   const { language } = useLanguage();
@@ -150,61 +145,62 @@ export default function Residential() {
 
   const content = {
     fr: {
-      title: "Installation Solaire pour Domicile",
-      subtitle: "Solutions sur mesure pour votre maison",
+      title: "Installation Solaire",
+      subtitle: "Solutions solaires innovantes et sur mesure pour votre foyer.",
       cards: [
         {
-          title: "Tous types de toitures",
+          title: "Installation sur tous les toits",
           description:
-            "Nos experts installent des panneaux solaires sur tout type de toit. Que vous ayez un toit plat, incliné ou complexe, nous avons la solution adaptée à votre situation.",
-          image: "/images/roof-installation.jpg",
+            "Nos experts qualifiés réalisent des installations solaires adaptées à chaque configuration de toit, qu'il soit plat, incliné ou de forme complexe. Nous garantissons une intégration parfaite et performante, en utilisant des technologies de pointe pour maximiser la production d'énergie tout en respectant l'intégrité de votre toiture. Avec nous, vous bénéficiez d'une solution clé en main, de l'étude de faisabilité à la mise en service.",
+          image: "/images/examplerooftop.png",
         },
         {
           title: "Borne de recharge universelle",
           description:
-            "Rechargez votre véhicule électrique efficacement avec nos bornes de recharge universelles. Optimisées pour une utilisation domestique.",
+            "Nos bornes de recharge sont compatibles avec tous les modèles de voitures électriques et hybrides rechargeables. Elles offrent une charge rapide, sécurisée et économique, tout en s'intégrant parfaitement à votre installation solaire. Grâce à notre système, vous pouvez recharger votre véhicule en toute simplicité, même pendant les heures creuses, pour optimiser vos économies d'énergie.",
           image: "/images/charger.jpg",
         },
         {
           title: "Suivi en temps réel",
           description:
-            "Gardez le contrôle de votre consommation d'énergie avec notre plateforme de surveillance intuitive. Suivez votre production d'énergie solaire en temps réel.",
-          image: "/images/monitoring-fr.jpg",
+            "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
+          image: "/images/applivoltek.png",
         },
       ],
       cta: {
-        title: "Plus d'informations",
-        description: "Contactez-nous pour un devis gratuit.",
-        button: "Contact",
+        title: "Prêt pour l'énergie solaire?",
+        description:
+          "Demandez un devis gratuit et personnalisé dès maintenant.",
+        button: "Demander un Devis",
       },
     },
     nl: {
-      title: "Zonne-installatie voor Thuis",
-      subtitle: "Oplossingen op maat voor uw woning",
+      title: "Zonne-installatie",
+      subtitle: "Ontdek op maat gemaakte zonne-oplossingen voor uw woning.",
       cards: [
         {
-          title: "Alle soorten daken",
+          title: "Geschikt voor alle daken",
           description:
-            "Onze experts installeren zonnepanelen op elk type dak. Of u nu een plat, schuin of complex dak heeft, wij hebben de oplossing die bij uw situatie past.",
-          image: "/images/roof-installation.jpg",
+            "Onze gecertificeerde experts installeren zonnepanelen op elk type dak, of het nu plat, schuin of complex is. Wij zorgen voor een perfecte en esthetische integratie, terwijl we de energieproductie voor uw huis optimaliseren. Met onze oplossingen profiteert u van een naadloze installatie, van haalbaarheidsstudie tot inbedrijfstelling.",
+          image: "/images/examplerooftop.png",
         },
         {
           title: "Universele laadpaal",
           description:
-            "Laad uw elektrische voertuig efficiënt op met onze universele laadpalen. Geoptimaliseerd voor thuisgebruik.",
+            "Onze laadpalen zijn geschikt voor alle modellen elektrische voertuigen en bieden een veilige, snelle en economische oplaadoplossing. Ze integreren perfect met uw zonne-installatie, zodat u uw voertuig eenvoudig kunt opladen, zelfs tijdens daluren, om uw energiebesparingen te maximaliseren.",
           image: "/images/charger.jpg",
         },
         {
           title: "Realtime monitoring",
           description:
-            "Houd controle over uw energieverbruik met ons intuïtieve monitoringplatform. Volg uw zonne-energieproductie in realtime.",
-          image: "/images/monitoring-nl.jpg",
+            "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
+          image: "/images/applivoltek.png",
         },
       ],
       cta: {
-        title: "Meer informatie",
-        description: "Neem contact met ons op voor een gratis offerte.",
-        button: "Contact",
+        title: "Klaar voor zonne-energie?",
+        description: "Vraag nu een gratis en persoonlijke offerte aan.",
+        button: "Contacteer ons",
       },
     },
   };

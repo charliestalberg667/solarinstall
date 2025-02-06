@@ -27,7 +27,7 @@ export function BrandsScroll() {
   if (!mounted) return null;
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 ">
       <Marquee gradient={false} speed={40}>
         {brands.map((brand, index) => (
           <div

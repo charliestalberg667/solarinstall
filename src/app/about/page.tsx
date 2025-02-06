@@ -3,7 +3,6 @@
 import { useLanguage } from "@/components/language-provider";
 import { Sun, Users, Award, Leaf } from "lucide-react";
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function About() {
   const { language } = useLanguage();
@@ -143,65 +142,58 @@ export default function About() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Sun className="w-6 h-6 mr-2 text-yellow-500" />
-                {mission}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>{missionText}</CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Users className="w-6 h-6 mr-2 text-yellow-500" />
-                {experience}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>{experienceText}</CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Award className="w-6 h-6 mr-2 text-yellow-500" />
-                {commitment}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>{commitmentText}</CardContent>
-          </Card>
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <div className="flex items-center mb-4">
+              <Sun className="w-6 h-6 mr-2 text-yellow-500" />
+              <h3 className="text-xl font-semibold">{mission}</h3>
+            </div>
+            <p>{missionText}</p>
+          </div>
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <div className="flex items-center mb-4">
+              <Users className="w-6 h-6 mr-2 text-yellow-500" />
+              <h3 className="text-xl font-semibold">{experience}</h3>
+            </div>
+            <p>{experienceText}</p>
+          </div>
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <div className="flex items-center mb-4">
+              <Award className="w-6 h-6 mr-2 text-yellow-500" />
+              <h3 className="text-xl font-semibold">{commitment}</h3>
+            </div>
+            <p>{commitmentText}</p>
+          </div>
         </div>
 
         <h2 className="text-3xl font-semibold mb-8 text-center">{values}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {valuesItems.map((item, index) => (
-            <Card key={index} className="text-center">
-              <CardHeader>
-                <item.icon className="w-12 h-12 mx-auto mb-4 text-yellow-500" />
-                <CardTitle>{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>{item.description}</CardContent>
-            </Card>
+            <div
+              key={index}
+              className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md text-center"
+            >
+              <item.icon className="w-12 h-12 mx-auto mb-4 text-yellow-500" />
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
           ))}
         </div>
 
-        <Card className="mb-16">
-          <CardHeader>
-            <CardTitle className="text-center">{stats.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.items.map((item, index) => (
-                <div key={index} className="text-center">
-                  <p className="text-3xl font-bold text-yellow-500">
-                    {item.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md mb-16">
+          <h3 className="text-center text-xl font-semibold mb-4">
+            {stats.title}
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.items.map((item, index) => (
+              <div key={index} className="text-center">
+                <p className="text-3xl font-bold text-yellow-500">
+                  {item.value}
+                </p>
+                <p className="text-sm text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="relative h-96 rounded-lg overflow-hidden">
           <Image
