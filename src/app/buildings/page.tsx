@@ -99,7 +99,7 @@ function BuildingsMobile({ content }: { content: Content }) {
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
-          <h1 className="text-4xl font-bold">{title}</h1>
+          <h1 className="text-2xl font-bold">{title}</h1>
           <p className="text-sm text-blue-600">{subtitle}</p>
         </div>
 
@@ -152,7 +152,7 @@ export default function Buildings() {
 
   const content = {
     fr: {
-      title: "Installation Solaire pour votre immeuble",
+      title: "Installation Solaire",
       subtitle: "Solutions sur mesure pour votre immeuble",
       cards: [
         {
@@ -182,7 +182,7 @@ export default function Buildings() {
       },
     },
     nl: {
-      title: "Zonne-installatie voor uw flat",
+      title: "Zonne-installatie",
       subtitle: "Oplossingen op maat voor uw flatgebouw",
       cards: [
         {

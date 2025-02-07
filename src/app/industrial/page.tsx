@@ -98,31 +98,44 @@ function IndustrialDesktop({ content }: { content: Content }) {
 function IndustrialMobile({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
-  return (
-    <div className="px-4">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl text-blue-600 font-bold mb-2">{title}</h1>
-        <p className=" text-lg">{subtitle}</p>
-      </div>
-      {cards.map((card, index) => (
-        <div key={index} className="mb-6 text-center">
-          <div className="relative h-[350px] rounded-lg overflow-hidden">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-8">
-              <h2 className="text-2xl font-bold text-white mt-4">
-                {card.title}
-              </h2>
-            </div>
-          </div>
+return (
+    <div>
+      <div id="content-section" className="container mx-auto px-4">
+        <div className="text-center mb-7">
+          <h1 className="text-2xl font-bold">{title}</h1>
+          <p className="text-sm text-blue-600">{subtitle}</p>
         </div>
-      ))}
-      <PowerCTAIndustrialMobile />
+
+        <div className="grid gap-8 pb-5">
+          {cards.map((card, index) => (
+            <div key={index} className="grid gap-4 items-center">
+              <div className="relative h-[300px] rounded-lg overflow-hidden">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  layout="fill"
+                  className="object-cover"
+                  priority={index === 0}
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
+                  <h2 className="text-xl font-bold text-white text-center">
+                    {card.title}
+                  </h2>
+                </div>
+              </div>
+              <div className="flex flex-col h-full justify-between px-4 py-4">
+                <p className="text-gray-800 text-justify leading-relaxed">
+                  {card.description}
+                </p>
+                <div className="flex mt-4 justify-center">
+                  {/* Additional content could go here */}
+                </div>
+              </div>
+            </div>
+          ))}
+          <PowerCTAIndustrialMobile />
+        </div>
+      </div>
     </div>
   );
 }
@@ -142,7 +155,7 @@ export default function Industrial() {
 
   const content = {
     fr: {
-      title: "Installation solaire pour l'industrie",
+      title: "Solution solaire",
       subtitle: "Des solutions sur mesure pour votre industrie",
       cards: [
         {
@@ -184,7 +197,7 @@ export default function Industrial() {
       },
     },
     nl: {
-      title: "Zonne-installatie voor Industrie",
+      title: "Zonne-installatie",
       subtitle: "Oplossingen op maat voor uw Industrie",
       cards: [
         {

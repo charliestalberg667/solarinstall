@@ -53,18 +53,19 @@ function EnterpriseDesktop({ content }: { content: Content }) {
                     priority={index === 0}
                   />
                 </div>
-                <div className="space-y-4 md:pl-2">
+                <div className="flex flex-col h-full justify-between md:px-4 py-8">
                   <h2 className="text-3xl font-bold text-center">
                     {card.title}
                   </h2>
                   <p className="text-gray-600 leading-relaxed text-justify">
                     {card.description}
                   </p>
+                  <div></div>
                 </div>
               </>
             ) : (
               <>
-                <div className="space-y-4 md:pr-2">
+                <div className="flex flex-col h-full justify-between md:px-4 py-8">
                   <h2 className="text-3xl font-bold text-center">
                     {card.title}
                   </h2>
@@ -99,7 +100,7 @@ function EnterpriseMobile({ content }: { content: Content }) {
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
-          <h1 className="text-4xl font-bold">{title}</h1>
+          <h1 className="text-2xl font-bold">{title}</h1>
           <p className="text-sm text-blue-600">{subtitle}</p>
         </div>
 
@@ -152,7 +153,7 @@ export default function Enterprise() {
 
   const content = {
     fr: {
-      title: "Installation Solaire pour entreprise",
+      title: "Installation Solaire",
       subtitle: "Solutions sur mesure pour votre entreprise",
       cards: [
         {
@@ -181,7 +182,7 @@ export default function Enterprise() {
       },
     },
     nl: {
-      title: "Zonne-installatie voor bedrijven",
+      title: "Zonne-installatie",
       subtitle: "Oplossingen op maat voor uw bedrijf",
       cards: [
         {
