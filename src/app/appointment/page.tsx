@@ -19,6 +19,7 @@ import { Send } from "lucide-react";
 export default function Appointment() {
   const { language } = useLanguage();
   const [name, setName] = useState("");
+  const [prenom, setPrenom] = useState(""); // Added state for prenom
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
@@ -32,6 +33,7 @@ export default function Appointment() {
       description:
         "Planifiez une consultation pour vos besoins en énergie solaire.",
       nameLabel: "Nom",
+      prenomLabel: "Prénom",
       emailLabel: "Email",
       phoneLabel: "Téléphone",
       addressLabel: "Adresse",
@@ -39,7 +41,6 @@ export default function Appointment() {
       typeLabel: "Type de rendez-vous",
       types: ["Résidentiel", "Bâtiment", "Entreprise", "Industriel"],
       submitButton: "Envoyer",
-      visitShowroom: "Visitez notre showroom",
       successMessage: "Votre demande a été envoyée avec succès !",
       errorMessage: "Une erreur s'est produite. Veuillez réessayer.",
       contactInfo: {
@@ -50,6 +51,7 @@ export default function Appointment() {
       title: "Maak een afspraak",
       description: "Plan een consultatie voor uw zonne-energiebehoeften.",
       nameLabel: "Naam",
+      prenomLabel: "Voornaam",
       emailLabel: "E-mail",
       phoneLabel: "Telefoon",
       addressLabel: "Adres",
@@ -57,7 +59,6 @@ export default function Appointment() {
       typeLabel: "Afspraaktype",
       types: ["Residentieel", "Gebouw", "Bedrijf", "Industrieel"],
       submitButton: "Verzenden",
-      visitShowroom: "Bezoek onze showroom",
       successMessage: "Uw aanvraag is succesvol verzonden!",
       errorMessage: "Er is een fout opgetreden. Probeer het opnieuw.",
       contactInfo: {
@@ -70,6 +71,7 @@ export default function Appointment() {
     title,
     description,
     nameLabel,
+    prenomLabel,
     emailLabel,
     phoneLabel,
     addressLabel,
@@ -77,10 +79,8 @@ export default function Appointment() {
     typeLabel,
     types,
     submitButton,
-    visitShowroom,
     successMessage,
     errorMessage,
-    contactInfo,
   } = content[language];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -91,6 +91,7 @@ export default function Appointment() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
+          prenom,
           email,
           phone,
           address,
@@ -105,6 +106,7 @@ export default function Appointment() {
           description: "We will contact you soon.",
         });
         setName("");
+        setPrenom(""); // Reset prenom
         setEmail("");
         setPhone("");
         setAddress("");
@@ -123,17 +125,23 @@ export default function Appointment() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
           <p className="text-lg text-gray-600">{description}</p>
         </div>
-        <div className="bg-gray-100 p-8 rounded-lg shadow-md max-w-lg mx-auto">
+        <div className="bg-gray-50 p-8 rounded-lg border border-gray-800 max-w-lg mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               placeholder={nameLabel}
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <Input
+              placeholder={prenomLabel} // Added input for prenom
+              value={prenom}
+              onChange={(e) => setPrenom(e.target.value)}
               required
             />
             <Input
@@ -184,20 +192,11 @@ export default function Appointment() {
               onChange={(e) => setMessage(e.target.value)}
               required
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="bg-blue-600 w-full">
               {submitButton} <Send className="ml-2 h-4 w-4" />
             </Button>
           </form>
-          <div className="text-center mt-6">
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              {visitShowroom}
-            </a>
-          </div>
+
         </div>
       </div>
     </div>
