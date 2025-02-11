@@ -13,7 +13,8 @@ interface Content {
 interface Card {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  video?: string;
 }
 
 function ResidentialDesktop({ content }: { content: Content }) {
@@ -37,13 +38,20 @@ function ResidentialDesktop({ content }: { content: Content }) {
             {index % 2 === 0 ? (
               <>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                    priority={index === 0}
-                  />
+                  {card.video ? (
+                    <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                      <source src={card.video} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+
+                      src={card.image||"/public/favicon.png"}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  )}
                 </div>
                 <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
                   <h2 className="text-3xl font-bold text-center">
@@ -67,13 +75,19 @@ function ResidentialDesktop({ content }: { content: Content }) {
                   <div></div>
                 </div>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                    priority={index === 0}
-                  />
+                  {card.video ? (
+                    <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                      <source src={card.video} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={card.image||"/public/favicon.png"}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  )}
                 </div>
               </>
             )}
@@ -100,18 +114,24 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
           {cards.map((card, index) => (
             <div key={index} className="grid gap-4 items-center">
               <div className="relative h-[300px] rounded-lg overflow-hidden">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  layout="fill"
-                  className="object-cover"
-                  priority={index === 0}
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
-                  <h2 className="text-xl font-bold text-white text-center">
-                    {card.title}
-                  </h2>
-                </div>
+                {card.video ? (
+                  <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                    <source src={card.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <>
+                    <Image
+                      src={card.image||"/public/favicon.png"}
+                      alt={card.title}
+                      layout="fill"
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                    <h2 className="text-xl font-bold text-white text-center">
+                      {card.title}
+                    </h2>
+                  </>
+                )}
               </div>
               <div className="flex flex-col h-full justify-between px-4 py-4">
                 <p className="text-gray-800 text-justify leading-relaxed">
@@ -164,7 +184,7 @@ export default function Residential() {
           title: "Suivi en temps réel",
           description:
             "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
-          image: "/images/applivoltek.png",
+          video: "/images/videoonduleur.mp4",
         },
       ],
       cta: {
