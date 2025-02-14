@@ -23,7 +23,7 @@ const Footer = () => {
   const { copyright, conditions, privacy, contact } = content[language];
 
   return (
-    <footer className="bg-gray-200 text-black py-6 mt-16">
+    <footer className=" py-6 bg-[#F5F5F5] text-[#003366] p-6 mt-24">
       <div className="container mx-auto text-center px-4">
         <p className="text-sm md:text-base">
           &copy; {new Date().getFullYear()} {copyright}

@@ -106,7 +106,7 @@ export default function Appointment() {
           description: "We will contact you soon.",
         });
         setName("");
-        setPrenom(""); // Reset prenom
+        setPrenom("");
         setEmail("");
         setPhone("");
         setAddress("");
@@ -124,81 +124,91 @@ export default function Appointment() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      <div className="container mx-auto px-6 py-6">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">{title}</h1>
-          <p className="text-lg text-gray-600">{description}</p>
-        </div>
-        <div className="bg-gray-50 p-8 rounded-lg border border-gray-800 max-w-lg mx-auto">
+      <div className=" min-h-screen flex justify-center items-center p-10">
+        <div className="bg-white p-8 border-4 border-[#91b4ee] rounded-xl shadow-2xl max-w-lg w-full">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-semibold text-blue-600 mb-4">{title}</h1>
+            <p className="text-lg text-gray-500">{description}</p>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Champs Input avec touche de rose */}
             <Input
-              placeholder={nameLabel}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
+                placeholder={nameLabel}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
             />
+
             <Input
-              placeholder={prenomLabel} // Added input for prenom
-              value={prenom}
-              onChange={(e) => setPrenom(e.target.value)}
-              required
+                placeholder={prenomLabel}
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2  transition-all duration-300 ease-in-out"
             />
+
             <Input
-              placeholder={emailLabel}
-              value={email}
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
+                placeholder={emailLabel}
+                value={email}
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
             />
+
             <Input
-              placeholder={phoneLabel}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
+                placeholder={phoneLabel}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
             />
+
             <Input
-              placeholder={addressLabel}
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
+                placeholder={addressLabel}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
             />
+
+            {/* Sélecteur dynamique avec rose et ombre */}
             <div className="space-y-2">
-              <label
-                htmlFor="appointmentType"
-                className="block text-sm font-medium"
-              >
+              <label htmlFor="appointmentType" className="block text-sm font-medium text-gray-600">
                 {typeLabel}
               </label>
-              <Select
-                value={appointmentType}
-                onValueChange={setAppointmentType}
-              >
-                <SelectTrigger className="w-full">
+              <Select value={appointmentType} onValueChange={setAppointmentType}>
+                <SelectTrigger className="w-full bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg">
                   <SelectValue placeholder={typeLabel} />
                 </SelectTrigger>
                 <SelectContent>
                   {types.map((type, index) => (
-                    <SelectItem key={index} value={type.toLowerCase()}>
-                      {type}
-                    </SelectItem>
+                      <SelectItem key={index} value={type.toLowerCase()}>
+                        {type}
+                      </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
+
+            {/* Textarea stylisée avec rose au focus */}
             <Textarea
-              placeholder={messageLabel}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
+                placeholder={messageLabel}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2  transition-all duration-300 ease-in-out"
             />
-            <Button type="submit" className="bg-blue-600 w-full">
+
+            {/* Bouton de soumission avec rose au survol */}
+            <Button type="submit" className=" text-white w-full py-3 rounded-lg  transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 ">
               {submitButton} <Send className="ml-2 h-4 w-4" />
             </Button>
           </form>
-
         </div>
       </div>
-    </div>
+
   );
 }
