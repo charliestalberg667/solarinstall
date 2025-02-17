@@ -76,7 +76,7 @@ function ResidentialDesktop({ content }: { content: Content }) {
                 </div>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
                   {card.video ? (
-                    <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                      <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
                       <source src={card.video} type="video/mp4" />
                     </video>
                   ) : (
@@ -186,6 +186,12 @@ export default function Residential() {
             "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
           video: "/images/videoonduleur.mp4",
         },
+        {
+          title: "Suivi en temps réel",
+          description:
+              "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
+          video: "/images/videoonduleur.mp4",
+        },
       ],
       cta: {
         title: "Prêt pour l'énergie solaire?",
@@ -216,6 +222,13 @@ export default function Residential() {
             "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
           video: "/images/videoonduleur.mp4",
         },
+        {
+          title: "Realtime monitoring",
+          description:
+              "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
+          video: "/images/videoonduleur.mp4",
+        },
+
       ],
       cta: {
         title: "Klaar voor zonne-energie?",

@@ -103,7 +103,7 @@ export function PowerCTAEnterprise() {
             {t.transformText.part1}{" "}
             <span className="text-[#FF4D00]">{t.transformText.part2}</span>
           </p>
-          <Link href="https://www.facebook.com/profile.php?id=61566318248064">
+          <Link href="https://www.facebook.com/61566318248064">
             <button
               type="submit"
               className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
@@ -203,7 +203,7 @@ export function PowerCTAEnterpriseMobile() {
               {t.transformText.part1}{" "}
               <span className="text-[#FF4D00]">{t.transformText.part2}</span>
             </p>
-            <Link href="https://www.facebook.com/profile.php?id=61566318248064">
+            <Link href="https://www.facebook.com/61566318248064">
               <button
                   type="submit"
                   className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
@@ -225,7 +225,7 @@ export function PowerCTAEnterpriseMobile() {
 
           <div className="flex flex-col items-center justify-center gap-4">
             <p className="text-xl font-medium">{t.moreCapacityText}</p>
-            <Link href="/enterprise">
+            <Link href="/industrial">
               <button
                   type="submit"
                   className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"

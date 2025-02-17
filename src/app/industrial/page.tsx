@@ -87,7 +87,7 @@ function IndustrialDesktop({ content }: { content: Content }) {
                       </div>
                       <div className="relative h-[400px] rounded-lg overflow-hidden">
                         {card.video ? (
-                            <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                            <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
                               <source src={card.video} type="video/mp4" />
                             </video>
                         ) : (
