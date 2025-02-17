@@ -39,7 +39,7 @@ function ResidentialDesktop({ content }: { content: Content }) {
               <>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
                   {card.video ? (
-                    <video autoPlay muted className="absolute inset-0 w-full h-full object-cover">
+                    <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
                       <source src={card.video} type="video/mp4" />
                     </video>
                   ) : (
@@ -113,9 +113,9 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
         <div className="grid gap-8 pb-5">
           {cards.map((card, index) => (
             <div key={index} className="grid gap-4 items-center">
-              <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <div className="relative h-[220px] rounded-lg overflow-hidden">
                 {card.video ? (
-                  <video autoPlay muted playsInline className="absolute inset-0 w-full h-full object-cover">
+                  <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                     <source src={card.video} type="video/mp4" />
                   </video>
                 ) : (
@@ -133,7 +133,7 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
                   </>
                 )}
               </div>
-              <div className="flex flex-col h-full justify-between px-4 py-4">
+              <div className="flex flex-col h-full justify-between ">
                 <p className="text-gray-800 text-justify leading-relaxed">
                   {card.description}
                 </p>
@@ -214,7 +214,7 @@ export default function Residential() {
           title: "Realtime monitoring",
           description:
             "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
-          image: "/images/applivoltek.png",
+          video: "/images/videoonduleur.mp4",
         },
       ],
       cta: {

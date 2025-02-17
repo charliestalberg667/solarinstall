@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
-import { PowerCTAEnterprise } from "@/components/power-cta-enterprise";
-import { PowerCTAMobile } from "@/components/power-cta";
+import { PowerCTAEnterprise,PowerCTAEnterpriseMobile } from "@/components/power-cta-enterprise";
+
 
 interface Content {
   title: string;
@@ -15,7 +15,8 @@ interface Content {
 interface Card {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  video?: string;
 }
 
 interface CTA {
@@ -28,68 +29,81 @@ function EnterpriseDesktop({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-2 text-blue-600">{title}</h1>
-        <p className="text-xl">{subtitle}</p>
-      </div>
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-2 text-blue-600">{title}</h1>
+          <p className="text-xl">{subtitle}</p>
+        </div>
 
-      <div className="grid gap-8 pb-5">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className={`grid md:grid-cols-2 gap-4 items-center ${
-              index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
-            }`}
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                    priority={index === 0}
-                  />
-                </div>
-                <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                  <h2 className="text-3xl font-bold text-center">
-                    {card.title}
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    {card.description}
-                  </p>
-                  <div></div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                  <h2 className="text-3xl font-bold text-center">
-                    {card.title}
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    {card.description}
-                  </p>
-                  <div></div>
-                </div>
-                <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                    priority={index === 0}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-        <PowerCTAEnterprise />
+        <div className="grid gap-8 pb-5">
+          {cards.map((card, index) => (
+              <div
+                  key={index}
+                  className={`grid md:grid-cols-2 gap-4 items-center ${
+                      index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
+                  }`}
+              >
+                {index % 2 === 0 ? (
+                    <>
+                      <div className="relative h-[400px] rounded-lg overflow-hidden">
+                        {card.video ? (
+                            <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
+                              <source src={card.video} type="video/mp4" />
+                            </video>
+                        ) : (
+                            <Image
+
+                                src={card.image||"/public/favicon.png"}
+                                alt={card.title}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                            />
+                        )}
+                      </div>
+                      <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
+                        <h2 className="text-3xl font-bold text-center">
+                          {card.title}
+                        </h2>
+                        <p className="text-gray-800 leading-relaxed text-justify">
+                          {card.description}
+                        </p>
+                        <div></div>
+                      </div>
+                    </>
+                ) : (
+                    <>
+                      <div className="flex flex-col h-full justify-between md:px-4 py-8">
+                        <h2 className="text-3xl font-bold text-center ">
+                          {card.title}
+                        </h2>
+                        <p className="text-gray-800 leading-relaxed text-justify">
+                          {card.description}
+                        </p>
+                        <div></div>
+                      </div>
+                      <div className="relative h-[400px] rounded-lg overflow-hidden">
+                        {card.video ? (
+                            <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                              <source src={card.video} type="video/mp4" />
+                            </video>
+                        ) : (
+                            <Image
+                                src={card.image||"/public/favicon.png"}
+                                alt={card.title}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                            />
+                        )}
+                      </div>
+                    </>
+                )}
+              </div>
+          ))}
+          <PowerCTAEnterprise />
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -97,44 +111,50 @@ function EnterpriseMobile({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
   return (
-    <div>
-      <div id="content-section" className="container mx-auto px-4">
-        <div className="text-center mb-7">
-          <h1 className="text-2xl font-bold">{title}</h1>
-          <p className="text-sm text-blue-600">{subtitle}</p>
-        </div>
+      <div>
+        <div id="content-section" className="container mx-auto px-4">
+          <div className="text-center mb-7">
+            <h1 className="text-4xl font-bold">{title}</h1>
+            <p className="text-sm text-blue-600">{subtitle}</p>
+          </div>
 
-        <div className="grid gap-8 pb-5">
-          {cards.map((card, index) => (
-            <div key={index} className="grid gap-4 items-center">
-              <div className="relative h-[300px] rounded-lg overflow-hidden">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  layout="fill"
-                  className="object-cover"
-                  priority={index === 0}
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
-                  <h2 className="text-xl font-bold text-white text-center">
-                    {card.title}
-                  </h2>
+          <div className="grid gap-8 pb-5">
+            {cards.map((card, index) => (
+                <div key={index} className="grid gap-4 items-center">
+                  <div className="relative h-[220px] rounded-lg overflow-hidden">
+                    {card.video ? (
+                        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+                          <source src={card.video} type="video/mp4" />
+                        </video>
+                    ) : (
+                        <>
+                          <Image
+                              src={card.image||"/public/favicon.png"}
+                              alt={card.title}
+                              layout="fill"
+                              className="object-cover"
+                              priority={index === 0}
+                          />
+                          <h2 className="text-xl font-bold text-white text-center">
+                            {card.title}
+                          </h2>
+                        </>
+                    )}
+                  </div>
+                  <div className="flex flex-col h-full justify-between ">
+                    <p className="text-gray-800 text-justify leading-relaxed">
+                      {card.description}
+                    </p>
+                    <div className="flex mt-4 justify-center">
+                      {/* Additional content could go here */}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col h-full justify-between px-4 py-4">
-                <p className="text-gray-800 text-justify leading-relaxed">
-                  {card.description}
-                </p>
-                <div className="flex mt-4 justify-center">
-                  {/* Additional content could go here */}
-                </div>
-              </div>
-            </div>
-          ))}
-          <PowerCTAMobile/>
+            ))}
+            <PowerCTAEnterpriseMobile />
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
