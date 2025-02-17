@@ -39,7 +39,7 @@ function ResidentialDesktop({ content }: { content: Content }) {
               <>
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
                   {card.video ? (
-                    <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                    <video autoPlay muted className="absolute inset-0 w-full h-full object-cover">
                       <source src={card.video} type="video/mp4" />
                     </video>
                   ) : (
@@ -115,7 +115,7 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
             <div key={index} className="grid gap-4 items-center">
               <div className="relative h-[300px] rounded-lg overflow-hidden">
                 {card.video ? (
-                  <video autoPlay muted controls className="absolute inset-0 w-full h-full object-cover">
+                  <video autoPlay muted playsInline className="absolute inset-0 w-full h-full object-cover">
                     <source src={card.video} type="video/mp4" />
                   </video>
                 ) : (

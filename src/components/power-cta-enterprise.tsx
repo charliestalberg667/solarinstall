@@ -56,7 +56,7 @@ export function PowerCTAEnterprise() {
   return (
     <div className="flex max-h-96 items-center justify-center mt-8 mb-8 ">
       <div className="grid grid-cols-2 grid-rows-2 gap-8 max-w-4xl text-center">
-        <div className="flex flex-col items-center gap-4 justify-center">
+        <div className="flex flex-col items-center space-y-6 justify-center">
           <button
             type="submit"
             className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
