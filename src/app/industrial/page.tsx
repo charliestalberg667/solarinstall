@@ -204,7 +204,7 @@ export default function Industrial() {
           image: "/images/EPES233.webp",
         },
         {
-          title: "ESS",
+          title: "ESP",
           description:
             "La solution de stockage d'énergie tout-en-un est préassemblée pour une installation facile et offre des performances élevées grâce à la technologie PCS avancée et au couplage AC sans arc DC. Avec une possibilité d'expansion flexible et un faible coût initial, le système peut s'adapter aux besoins croissants. Le refroidissement actif par liquide (chauffage) et une température de fonctionnement optimale assurent une longue durée de vie de plus de 8000 cycles, simplifiant ainsi la maintenance.",
           image: "/images/EPES233inside.webp",
@@ -246,9 +246,9 @@ export default function Industrial() {
           image: "/images/EPES233.webp",
         },
         {
-          title: "ESS",
+          title: "ESP",
           description:
-            "De All-in-One energieopslagoplossing is vooraf gemonteerd voor eenvoudige installatie en biedt hoge prestaties dankzij de geavanceerde PCS-technologie en AC-koppeling zonder DC-boog. Met een flexibele uitbreidingsmogelijkheid en lage initiële kosten kan het systeem worden aangepast aan groeiende behoeften. De actieve vloeistofkoeling (verwarming) en een optimale bedrijfstemperatuur zorgen voor een lange levensduur van meer dan 8000 cycli, wat onderhoud eenvoudig maakt.",
+            "De All-in-One energieopslagoplossing is vooraf gemonteerd voor eenvoudige installatie en biedt hoge prestaties dankzij de geavanceerde PCS-technologie en AC-koppeling zonder DC-boog. Met een flexibele uitbreidingsmogelijkheid en lage initiële kosten kan het systeem worden aangepast aan groeiende behoeften. De actieve vloeistofkoeling (verwarming) en een optimale bedrijfstemperatuur zorgen voor een lange levensduur van meer dan cycli, wat onderhoud eenvoudig maakt.",
           image: "/images/EPES233inside.webp",
         },
       ],
