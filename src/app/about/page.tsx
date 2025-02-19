@@ -52,7 +52,7 @@ export default function About() {
         items: [
           { value: "10k+", label: "Installations réalisées" },
           { value: "50MW+", label: "Capacité totale installée" },
-          { value: "99%", label: "Taux de satisfaction client" },
+          { value: "100%", label: "Taux de satisfaction client" },
           {
             value: "30%",
             label: "Économies moyennes sur les factures d'électricité",
