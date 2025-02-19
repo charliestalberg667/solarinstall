@@ -223,7 +223,7 @@ export default function Residential() {
           video: "/images/videoonduleur.mp4",
         },
         {
-          title: "Realtime monitoring",
+          title: "Realtiojp^pk^pkme monitoring",
           description:
               "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
           video: "/images/videoonduleur.mp4",
