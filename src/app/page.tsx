@@ -35,7 +35,7 @@ function HomeDesktop({ content }: { content: Content }) {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-4 items-center ${
+              className={`grid  md:grid-cols-2 gap-4 items-center ${
                 index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
               }`}
             >
