@@ -125,7 +125,7 @@ export default function Appointment() {
 
   return (
       <div className=" min-h-screen flex justify-center items-center p-10">
-        <div className="bg-white p-8 border-4 border-[#91b4ee] rounded-xl shadow-2xl max-w-lg w-full">
+        <div className="bg-white p-8 border-4 border-[#91b4ee] rounded-xxl shadow-2xl max-w-lg w-full">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-semibold text-blue-600 mb-4">{title}</h1>
             <p className="text-lg text-gray-500">{description}</p>

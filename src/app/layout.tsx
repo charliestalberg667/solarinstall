@@ -5,7 +5,6 @@ import { LanguageProvider } from "@/components/language-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer";
 import React, { StrictMode } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +26,6 @@ export default function RootLayout({
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
         <body className={inter.className}>
-        <SpeedInsights />
           <LanguageProvider>
             <div className="flex flex-col min-h-screen">
               <Navbar />
