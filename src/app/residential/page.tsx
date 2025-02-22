@@ -185,7 +185,7 @@ export default function Residential() {
         {
           title: "Solution de Stockage Avancée",
           description: "Maximisez votre indépendance énergétique avec nos solutions de stockage innovantes. Nos batteries intelligentes stockent votre surplus d'énergie solaire pendant la journée pour la restituer quand vous en avez besoin. Grâce à notre technologie de gestion intelligente, votre système anticipe vos besoins énergétiques et optimise automatiquement l'utilisation de l'énergie stockée, vous garantissant une autonomie maximale et des économies accrues.",
-          video: "/images/battery-animation.mp4"
+         Image: "/images/battery-animation.gif"
         }
       ],
       cta: {
@@ -216,7 +216,7 @@ export default function Residential() {
         {
           title: "Geavanceerde Opslagoplossing",
           description: "Maximaliseer uw energieonafhankelijkheid met onze innovatieve opslagoplossingen. Onze slimme batterijen slaan uw overtollige zonne-energie overdag op om deze te gebruiken wanneer u deze nodig heeft. Dankzij onze slimme beheertechnologie anticipeert uw systeem op uw energiebehoeften en optimaliseert het automatisch het gebruik van opgeslagen energie, waardoor u maximale autonomie en verhoogde besparingen garandeert.",
-          video: "/images/battery-animation.mp4"
+          image: "/images/battery-animation.gif"
         }
       ],
       cta: {
