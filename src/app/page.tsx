@@ -140,9 +140,9 @@ function HomeDesktop({ content }: { content: Content }) {
                         priority={index === 0}
                         unoptimized
                       />
-                    ) : (
+                    ) : ( 
                       <Image
-                        src={card.image||"/public/favicon.png"}
+                        src={card.image||"/public/favicon.png  "}
                         alt={card.title}
                         fill
                         className="object-cover"

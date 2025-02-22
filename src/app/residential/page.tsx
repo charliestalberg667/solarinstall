@@ -198,7 +198,7 @@ export default function Residential() {
   const content = {
     fr: {
       title: "Installation Solaire Résidentielle",
-      subtitle: "Transformez votre maison en source d'énergie propre et économique",
+      subtitle: "Transformez  votre maison en source d'énergie propre et économique",
       cards: [
         {
           title: "Expertise en Installation Solaire",
