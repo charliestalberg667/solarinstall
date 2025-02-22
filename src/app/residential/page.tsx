@@ -216,7 +216,7 @@ export default function Residential() {
         {
           title: "Geavanceerde Opslagoplossing",
           description: "Maximaliseer uw energieonafhankelijkheid met onze innovatieve opslagoplossingen. Onze slimme batterijen slaan uw overtollige zonne-energie overdag op om deze te gebruiken wanneer u deze nodig heeft. Dankzij onze slimme beheertechnologie anticipeert uw systeem op uw energiebehoeften en optimaliseert het automatisch het gebruik van opgeslagen energie, waardoor u maximale autonomie en verhoogde besparingen garandeert.",
-          image: "/images/battery-animation.gif"
+          video: "/images/battery-animation.gif"
         }
       ],
       cta: {
