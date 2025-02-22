@@ -44,7 +44,6 @@ function ResidentialDesktop({ content }: { content: Content }) {
                     </video>
                   ) : (
                     <Image
-
                       src={card.image||"/public/favicon.png"}
                       alt={card.title}
                       fill
@@ -165,77 +164,67 @@ export default function Residential() {
 
   const content = {
     fr: {
-      title: "Installation Solaire",
-      subtitle: "Solutions solaires innovantes et sur mesure pour votre foyer.",
+      title: "Installation Solaire Résidentielle",
+      subtitle: "Transformez votre maison en source d'énergie propre et économique",
       cards: [
         {
-          title: "Installation sur tous les toits",
-          description:
-            "Nos experts qualifiés réalisent des installations solaires adaptées à chaque configuration de toit, qu'il soit plat, incliné ou de forme complexe. Nous garantissons une intégration parfaite et performante, en utilisant des technologies de pointe pour maximiser la production d'énergie tout en respectant l'intégrité de votre toiture. Avec nous, vous bénéficiez d'une solution clé en main, de l'étude de faisabilité à la mise en service.",
-          image: "/images/examplerooftop.png",
+          title: "Expertise en Installation Solaire",
+          description: "Notre équipe d'experts certifiés analyse minutieusement votre toiture pour une installation optimale des panneaux solaires. Nous prenons en compte l'orientation, l'inclinaison et la structure de votre toit pour maximiser votre production d'énergie. Grâce à nos technologies de pointe et notre savoir-faire, nous garantissons une intégration esthétique qui respecte l'architecture de votre maison tout en optimisant les performances énergétiques.",
+          image: "/images/examplerooftop.png"
         },
         {
-          title: "Borne de recharge universelle",
-          description:
-            "Nos bornes de recharge sont compatibles avec tous les modèles de voitures électriques et hybrides rechargeables. Elles offrent une charge rapide, sécurisée et économique, tout en s'intégrant parfaitement à votre installation solaire. Grâce à notre système, vous pouvez recharger votre véhicule en toute simplicité, même pendant les heures creuses, pour optimiser vos économies d'énergie.",
-          image: "/images/charger.jpg",
+          title: "Mobilité Électrique Intelligente",
+          description: "Passez à la mobilité durable avec nos solutions de recharge intelligentes. Notre borne de recharge connectée s'adapte automatiquement à votre production solaire pour privilégier la charge de votre véhicule aux heures les plus favorables. Profitez d'une interface intuitive pour programmer vos recharges, suivre votre consommation et optimiser vos coûts. Compatible avec tous les véhicules électriques, notre solution vous garantit une recharge rapide et sécurisée.",
+          image: "/images/charger.jpg"
         },
         {
-          title: "Suivi en temps réel",
-          description:
-            "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
-          video: "/images/videoonduleur.mp4",
+          title: "Monitoring Intelligent",
+          description: "Prenez le contrôle total de votre installation avec notre système de monitoring dernière génération. Notre application vous offre une vision claire et détaillée de votre production solaire, votre consommation électrique et vos économies réalisées. Visualisez en temps réel l'impact positif de votre installation sur l'environnement, recevez des notifications personnalisées et optimisez votre autoconsommation grâce à nos algorithmes d'intelligence artificielle.",
+          video: "/images/videoonduleur.mp4"
         },
         {
-          title: "Suivi en temps réel",
-          description:
-              "Notre plateforme de surveillance vous permet de suivre en temps réel votre production d'énergie solaire et votre consommation électrique. Visualisez des graphiques détaillés, recevez des alertes personnalisées et accédez à des conseils pour optimiser votre usage énergétique. Que vous soyez chez vous ou à l'autre bout du monde, gardez un œil sur votre installation solaire grâce à notre application mobile et web.",
-          video: "/images/videoonduleur.mp4",
-        },
+          title: "Solution de Stockage Avancée",
+          description: "Maximisez votre indépendance énergétique avec nos solutions de stockage innovantes. Nos batteries intelligentes stockent votre surplus d'énergie solaire pendant la journée pour la restituer quand vous en avez besoin. Grâce à notre technologie de gestion intelligente, votre système anticipe vos besoins énergétiques et optimise automatiquement l'utilisation de l'énergie stockée, vous garantissant une autonomie maximale et des économies accrues.",
+          video: "/images/battery-animation.mp4"
+        }
       ],
       cta: {
         title: "Prêt pour l'énergie solaire?",
-        description:
-          "Demandez un devis gratuit et personnalisé dès maintenant.",
-        button: "Demander un Devis",
-      },
+        description: "Demandez un devis gratuit et personnalisé dès maintenant.",
+        button: "Demander un Devis"
+      }
     },
     nl: {
-      title: "Zonne-installatie",
-      subtitle: "Ontdek op maat gemaakte zonne-oplossingen voor uw woning.",
+      title: "Residentiële Zonne-installatie", 
+      subtitle: "Transformeer uw huis in een bron van schone en betaalbare energie",
       cards: [
         {
-          title: "Geschikt voor alle daken",
-          description:
-            "Onze gecertificeerde experts installeren zonnepanelen op elk type dak, of het nu plat, schuin of complex is. Wij zorgen voor een perfecte en esthetische integratie, terwijl we de energieproductie voor uw huis optimaliseren. Met onze oplossingen profiteert u van een naadloze installatie, van haalbaarheidsstudie tot inbedrijfstelling.",
-          image: "/images/examplerooftop.png",
+          title: "Expertise in Zonne-installaties",
+          description: "Ons team van gecertificeerde experts analyseert zorgvuldig uw dak voor een optimale installatie van zonnepanelen. We houden rekening met de oriëntatie, hellingshoek en structuur van uw dak om uw energieproductie te maximaliseren. Dankzij onze geavanceerde technologieën en expertise garanderen we een esthetische integratie die de architectuur van uw huis respecteert en tegelijkertijd de energieprestaties optimaliseert.",
+          image: "/images/examplerooftop.png"
         },
         {
-          title: "Universele laadpaal",
-          description:
-            "Onze laadpalen zijn geschikt voor alle modellen elektrische voertuigen en bieden een veilige, snelle en economische oplaadoplossing. Ze integreren perfect met uw zonne-installatie, zodat u uw voertuig eenvoudig kunt opladen, zelfs tijdens daluren, om uw energiebesparingen te maximaliseren.",
-          image: "/images/charger.jpg",
+          title: "Slimme Elektrische Mobiliteit",
+          description: "Stap over op duurzame mobiliteit met onze slimme oplaadoplossingen. Ons connected laadstation past zich automatisch aan uw zonne-energieproductie aan om uw voertuig op de meest gunstige momenten op te laden. Profiteer van een intuïtieve interface om uw oplaadbeurten te programmeren, uw verbruik te volgen en uw kosten te optimaliseren. Compatibel met alle elektrische voertuigen, onze oplossing garandeert u een snelle en veilige oplaadbeurt.",
+          image: "/images/charger.jpg"
         },
         {
-          title: "Realtime monitoring",
-          description:
-            "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
-          video: "/images/videoonduleur.mp4",
+          title: "Intelligente Monitoring",
+          description: "Neem de volledige controle over uw installatie met ons nieuwste monitoring systeem. Onze applicatie biedt u een helder en gedetailleerd overzicht van uw zonne-energieproductie, elektriciteitsverbruik en gerealiseerde besparingen. Bekijk in realtime de positieve impact van uw installatie op het milieu, ontvang gepersonaliseerde meldingen en optimaliseer uw eigen verbruik dankzij onze AI-algoritmes.",
+          video: "/images/videoonduleur.mp4"
         },
         {
-          title: "Realtiojp^pk^pkme monitoring",
-          description:
-              "Met ons intuïtieve monitoringplatform kunt u in realtime uw zonne-energieproductie en verbruik volgen. Bekijk gedetailleerde grafieken, ontvang gepersonaliseerde meldingen en krijg toegang tot advies om uw energiegebruik te optimaliseren. Of u nu thuis bent of aan de andere kant van de wereld, houd uw zonne-installatie in de gaten met onze mobiele en webapplicatie.",
-          video: "/images/videoonduleur.mp4",
-        },
-
+          title: "Geavanceerde Opslagoplossing",
+          description: "Maximaliseer uw energieonafhankelijkheid met onze innovatieve opslagoplossingen. Onze slimme batterijen slaan uw overtollige zonne-energie overdag op om deze te gebruiken wanneer u deze nodig heeft. Dankzij onze slimme beheertechnologie anticipeert uw systeem op uw energiebehoeften en optimaliseert het automatisch het gebruik van opgeslagen energie, waardoor u maximale autonomie en verhoogde besparingen garandeert.",
+          video: "/images/battery-animation.mp4"
+        }
       ],
       cta: {
         title: "Klaar voor zonne-energie?",
         description: "Vraag nu een gratis en persoonlijke offerte aan.",
-        button: "Contacteer ons",
-      },
-    },
+        button: "Contacteer ons"
+      }
+    }
   };
 
   if (!mounted) return null;
