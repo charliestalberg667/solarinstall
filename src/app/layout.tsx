@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
-        <body className={`${inter.className} bg-[#f5f5f7]`}>
+        <body className={`${inter.className} bg-[#fafafb]`}>
           <LanguageProvider>
             <div className="flex flex-col min-h-screen">
               <Navbar />
