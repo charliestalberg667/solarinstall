@@ -20,7 +20,28 @@ import 'dotenv/config';
                       to: 'gst@solarstock.be',
                       reply_to: email,
                       subject: `SolarInstall Appointment Request (${name})`,
-                      text: `www.solarstock.be`,
+                      text: `
+                SolarInstall Appointment Request
+                
+                Name: ${name}
+                Email: ${email}
+                Phone: ${phone}
+                Address: ${address}
+                Appointment Type: ${appointmentType}
+                
+                Message:
+                ${message}
+                      `,
+                      html: `
+                <h2>SolarInstall Appointment Request</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Appointment Type:</strong> ${appointmentType}</p>
+                <h3>Message:</h3>
+                <p>${message.replace(/\n/g, '<br>')}</p>
+                      `,
                     };
 
                     interface EmailResponse {
@@ -28,10 +49,7 @@ import 'dotenv/config';
                     }
 
                     const response: EmailResponse = await resend.emails.send(mailOptions);
-                    console.log('Email response:', response);
-
                     if (response.error) {
-                      console.error('Email sending error:', response.error.message);
                       throw new Error(response.error.message);
                     }
 
