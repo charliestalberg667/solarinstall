@@ -30,7 +30,7 @@ function HomeDesktop({ content }: { content: Content }) {
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h1 className="text-8xl font-bold mb-2 text-[#355834]">{title}</h1>
-          <p className=" text-[#43964c]">{subtitle}</p>
+          <p className=" text-[#43964c] text-xl">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -78,7 +78,7 @@ function HomeDesktop({ content }: { content: Content }) {
                       <Link href={card.link}>
                         <button
                           type="submit"
-                          className="border-2 border-[#355834] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                          className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
                         >
                           {cta}
                           <svg
@@ -109,7 +109,7 @@ function HomeDesktop({ content }: { content: Content }) {
                       <Link href={card.link}>
                         <button
                           type="submit"
-                          className="border-2 border-[#355834] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                          className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
                         >
                           {cta}
                           <svg

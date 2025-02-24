@@ -26,8 +26,10 @@ export default function RootLayout({
   return (
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
+        <head>
+        </head>
         <body className={inter.className}>
-        <SpeedInsights />
+          <SpeedInsights />
           <LanguageProvider>
             <div className="flex flex-col min-h-screen">
               <Navbar />
