@@ -24,8 +24,8 @@ function ResidentialDesktop({ content }: { content: Content }) {
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-2 text-blue-600">{title}</h1>
-        <p className="text-xl">{subtitle}</p>
+        <h1 className="text-4xl font-bold mb-2 text-[#355834]">{title}</h1>
+        <p className="text-xl text-[#43964c]">{subtitle}</p>
       </div>
 
       <div className="grid gap-8 pb-5">
@@ -63,7 +63,7 @@ function ResidentialDesktop({ content }: { content: Content }) {
                   )}
                 </div>
                 <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
-                  <h2 className="text-3xl font-bold text-center">
+                  <h2 className="text-3xl font-bold text-center text-[#355834]">
                     {card.title}
                   </h2>
                   <p className="text-gray-800 leading-relaxed text-justify">
