@@ -13,35 +13,14 @@ import 'dotenv/config';
                       );
                     }
 
-                    const resend = new Resend(process.env.re_9AtKt42q_HXqDeuEax1WXZQutNUuC2KVa);  
+                    const resend = new Resend(process.env.RESEND_API_KEY);
 
                     const mailOptions = {
                       from: 'SolarInstall Contact <onboarding@resend.dev>',
                       to: 'gst@solarstock.be',
                       reply_to: email,
                       subject: `SolarInstall Appointment Request (${name})`,
-                      text: `
-                SolarInstall Appointment Request
-                
-                Name: ${name}
-                Email: ${email}
-                Phone: ${phone}
-                Address: ${address}
-                Appointment Type: ${appointmentType}
-                
-                Message:
-                ${message}
-                      `,
-                      html: `
-                <h2>SolarInstall Appointment Request</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Address:</strong> ${address}</p>
-                <p><strong>Appointment Type:</strong> ${appointmentType}</p>
-                <h3>Message:</h3>
-                <p>${message.replace(/\n/g, '<br>')}</p>
-                      `,
+                      text: `www.solarstock.be`,
                     };
 
                     interface EmailResponse {
