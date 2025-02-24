@@ -13,7 +13,7 @@ import 'dotenv/config';
                       );
                     }
 
-                    const resend = new Resend(process.env.RESEND_API_KEY);
+                    const resend = new Resend(process.env.re_9AtKt42q_HXqDeuEax1WXZQutNUuC2KVa);  
 
                     const mailOptions = {
                       from: 'SolarInstall Contact <onboarding@resend.dev>',
@@ -49,7 +49,10 @@ import 'dotenv/config';
                     }
 
                     const response: EmailResponse = await resend.emails.send(mailOptions);
+                    console.log('Email response:', response);
+
                     if (response.error) {
+                      console.error('Email sending error:', response.error.message);
                       throw new Error(response.error.message);
                     }
 
