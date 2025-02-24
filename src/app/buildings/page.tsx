@@ -210,7 +210,7 @@ export default function Buildings() {
         {
           title: "Tous types de toitures",
           description:
-            "Nos experts installent des panneaux solaires sur tout type de toit. Que vous ayez un toit plat, incliné ou complexe, nous avons la solution adaptée à votre situation. Nous utilisons des technologies de pointe pour garantir une intégration parfaite et esthétique, tout en maximisant la production d'énergie. Notre équipe qualifiée assure une installation rapide et efficace, en minimisant les perturbations pour les occupants de l'immeuble. Faites confiance à notre expertise pour une solution énergétique durable et rentable.",
+            "Nos experts installent des panneaux solaires sur tous types de toits, qu’ils soient plats, inclinés ou de forme complexe. Grâce à des technologies adaptées, nous garantissons une intégration optimale sans compromettre l’intégrité de votre toiture. De l’étude de faisabilité à la mise en service, nous vous offrons une solution clé en main, assurant performance et durabilité",
           image: "/images/roof-installation.jpg",
         },
         {
