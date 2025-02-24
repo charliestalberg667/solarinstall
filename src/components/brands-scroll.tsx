@@ -48,8 +48,8 @@ export function BrandsScroll() {
             <span
               className={`text-sm ${
                 index % 2 === 0
-                  ? "text-[#355834] font-semibold"
-                  : "text-[#355834] font-light"
+                  ? "text-[#14281D] font-semibold"
+                  : "text-[#14281D] font-light"
               }`}
             >
               {brand}

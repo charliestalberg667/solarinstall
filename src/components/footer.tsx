@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <>
       <BrandsScroll />
-      <footer className=" py-6 bg-[#ededed] text-[#355834] p-6">
+      <footer className="py-6 bg-[#ededed] text-[#14281D] p-6">
         <div className="container mx-auto text-center px-4">
           <p className="text-sm md:text-base">
             &copy; {new Date().getFullYear()} {copyright}
