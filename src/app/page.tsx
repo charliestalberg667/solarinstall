@@ -71,7 +71,7 @@ function HomeDesktop({ content }: { content: Content }) {
                     <h2 className="text-3xl font-bold text-center text-[#355834]">
                       {card.title}
                     </h2>
-                    <p className=" text-gray-800 leading-relaxed text-justify">
+                    <p className=" text-gray-700 leading-relaxed text-justify">
                       {card.description}
                     </p>
                     <div className="flex mt-4 justify-center ">
