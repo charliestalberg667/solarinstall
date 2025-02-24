@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer";
 import React, { StrictMode } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
         <head>
+          <Analytics />
         </head>
         <body className={inter.className}>
           <SpeedInsights />
