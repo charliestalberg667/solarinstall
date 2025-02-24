@@ -16,7 +16,7 @@ import 'dotenv/config';
                     const resend = new Resend("re_gYvkYCWq_BV9qcqD8kkBBgADJ6tbnRjzj");
 
                     const mailOptions = {
-                      from: 'SolarInstall Contact <onboarding@resend.dev>',
+                      from: 'onboarding@resend.dev',
                       to: 'gst@solarstock.be',
                       reply_to: email,
                       subject: `SolarInstall Appointment Request (${name})`,
