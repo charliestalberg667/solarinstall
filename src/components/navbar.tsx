@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useLanguage } from "./language-provider";
 import { Menu } from "lucide-react";
 import { FR, NL } from "country-flag-icons/react/3x2";
-import { BrandsScroll } from "@/components/brands-scroll";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -21,6 +20,15 @@ const Navbar = () => {
     { href: "/contact", label: "Contact" },
   ];
 
+  const content = {
+    fr: {
+      exploreShowroom: "Explorer le showroom",
+    },
+    nl: {
+      exploreShowroom: "Ontdek de showroom",
+    },
+  };
+  const { exploreShowroom } = content[language];
   const onLanguageChange = () => {
     setLanguage(language === "fr" ? "nl" : "fr");
     if (clickCount + 1 === 20) {
@@ -32,35 +40,54 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex items-center justify-between h-16">
+    <nav className="">
+        <div className="flex items-center justify-between h-16 mx-7 px-4 gap-8 mt-4 mb-6 ">
+          <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logoblack.png"
                 alt="Logo"
                 width={30}
                 height={30}
                 className="mr-2"
               />
-              <span className="text-xl font-bold">SolarInstall</span>
+              <span className="text-xl font-bold text-[#254029]">SolarInstall</span>
             </Link>
           </div>
-          <div className="hidden md:flex flex-grow justify-center">
-            <div className="flex items-center space-x-4">
+          <div className="hidden md:flex justify-center">
+            <div className="flex items-center ">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-[#3c7740] px-3 py-2 rounded-md text-base font-semibold"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="hidden md:flex items-center space-x-2">
+          </div>
+          <div className="flex items-center gap-4">
+          <button
+            type="submit"
+            className="hidden md:flex border-2 border-[#355834] p-4 justify-center gap-2 items-center text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+          >
+            {exploreShowroom}
+            <svg
+              className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full p-2 rotate-45"
+              viewBox="0 0 16 19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                className="fill-gray-800 group-hover:fill-gray-800"
+              ></path>
+            </svg>
+          </button>
+
+          <div className="hidden md:flex items-center gap-4">
             <button
               onClick={onLanguageChange}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white flex items-center space-x-2"
@@ -78,7 +105,8 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="md:hidden flex items-center space-x-2">
+          </div>
+          <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => {
                 setLanguage(language === "fr" ? "nl" : "fr");
@@ -113,8 +141,6 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <BrandsScroll />
-      </div>
 
       {isMenuOpen && (
         <div className="md:hidden">
@@ -123,7 +149,7 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+                className="text-[#3c7740] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
                 onClick={toggleMenu}
               >
                 {item.label}
@@ -134,7 +160,7 @@ const Navbar = () => {
                 setLanguage(language === "fr" ? "nl" : "fr");
                 toggleMenu();
               }}
-              className="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+              className="text-[#3c7740] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
             >
               {language === "fr" ? "Nederlands" : "Français"}
             </button>

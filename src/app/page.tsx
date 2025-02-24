@@ -29,8 +29,8 @@ function HomeDesktop({ content }: { content: Content }) {
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h1 className="text-8xl font-bold mb-2">{title}</h1>
-          <p className="text-blue-600">{subtitle}</p>
+          <h1 className="text-8xl font-bold mb-2 text-[#355834]">{title}</h1>
+          <p className=" text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -68,7 +68,7 @@ function HomeDesktop({ content }: { content: Content }) {
                     )}
                   </div>
                   <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
-                    <h2 className="text-3xl font-bold text-center">
+                    <h2 className="text-3xl font-bold text-center text-[#355834]">
                       {card.title}
                     </h2>
                     <p className=" text-gray-800 leading-relaxed text-justify">
@@ -78,7 +78,7 @@ function HomeDesktop({ content }: { content: Content }) {
                       <Link href={card.link}>
                         <button
                           type="submit"
-                          className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                          className="border-2 border-[#355834] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
                         >
                           {cta}
                           <svg
@@ -99,17 +99,17 @@ function HomeDesktop({ content }: { content: Content }) {
               ) : (
                 <>
                   <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
-                    <h2 className="text-3xl font-bold text-center">
+                    <h2 className="text-3xl font-bold text-center text-[#355834] ">
                       {card.title}
                     </h2>
-                    <p className="text-gray-600 text-justify leading-relaxed">
+                      <p className="text-gray-700 text-justify leading-relaxed">
                       {card.description}
                     </p>
                     <div className="flex mt-4 justify-center">
                       <Link href={card.link}>
                         <button
                           type="submit"
-                          className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                          className="border-2 border-[#355834] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
                         >
                           {cta}
                           <svg
@@ -167,8 +167,8 @@ function HomeMobile({ content }: { content: Content }) {
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
-          <h1 className="text-4xl font-bold ">{title}</h1>
-          <p className="text-sm text-blue-600">{subtitle}</p>
+          <h1 className="text-4xl font-bold text-[#355834] ">{title}</h1>
+          <p className="text-sm text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -190,7 +190,7 @@ function HomeMobile({ content }: { content: Content }) {
                       unoptimized
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
-                      <h2 className="text-xl font-bold text-white text-center">
+                      <h2 className="text-xl font-bold text-white text-center text-white">
                         {card.title}
                       </h2>
                     </div>
@@ -205,7 +205,7 @@ function HomeMobile({ content }: { content: Content }) {
                       priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4">
-                      <h2 className="text-xl font-bold text-white text-center">
+                      <h2 className="text-xl font-bold text-white text-center text-white">
                         {card.title}
                       </h2>
                     </div>
@@ -213,14 +213,14 @@ function HomeMobile({ content }: { content: Content }) {
                 )}
               </div>
               <div className="flex flex-col h-full justify-between md:px-4 py-4">
-                <p className="text-gray-600 text-center leading-relaxed">
+                <p className="text-gray-700 text-center leading-relaxed">
                   {card.shortDescription}
                 </p>
                 <div className="flex mt-4 justify-center">
                   <Link href={card.link}>
                     <button
                       type="submit"
-                      className="border-2 border-blue-500 p-2 md:p-4 flex justify-center gap-2 items-center mx-auto text-sm md:text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-200 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-350 relative z-10 px-2 py-1 md:px-4 md:py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                      className="border-2 border-[#355834] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#355834] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
                     >
                       {cta}
                       <svg
