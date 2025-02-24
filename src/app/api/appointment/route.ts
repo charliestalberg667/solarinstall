@@ -13,7 +13,7 @@ import 'dotenv/config';
                       );
                     }
 
-                    const resend = new Resend(process.env.RESEND_API_KEY);
+                    const resend = new Resend("re_gYvkYCWq_BV9qcqD8kkBBgADJ6tbnRjzj");
 
                     const mailOptions = {
                       from: 'SolarInstall Contact <onboarding@resend.dev>',
