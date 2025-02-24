@@ -19,7 +19,7 @@ import { Send } from "lucide-react";
 export default function Appointment() {
   const { language } = useLanguage();
   const [name, setName] = useState("");
-  const [prenom, setPrenom] = useState(""); // Added state for prenom
+  const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
@@ -30,8 +30,7 @@ export default function Appointment() {
   const content = {
     fr: {
       title: "Prenez rendez-vous",
-      description:
-        "Planifiez une consultation pour vos besoins en énergie solaire.",
+      description: "Planifiez une consultation pour vos besoins en énergie solaire.",
       nameLabel: "Nom",
       prenomLabel: "Prénom",
       emailLabel: "Email",
@@ -44,8 +43,8 @@ export default function Appointment() {
       successMessage: "Votre demande a été envoyée avec succès !",
       errorMessage: "Une erreur s'est produite. Veuillez réessayer.",
       contactInfo: {
-        address: "Chaussée de Mons 458, 1600 Sint-Pieters-Leeuw, Belgique",
-      },
+        address: "Chaussée de Mons 458, 1600 Sint-Pieters-Leeuw, Belgique"
+      }
     },
     nl: {
       title: "Maak een afspraak",
@@ -62,9 +61,9 @@ export default function Appointment() {
       successMessage: "Uw aanvraag is succesvol verzonden!",
       errorMessage: "Er is een fout opgetreden. Probeer het opnieuw.",
       contactInfo: {
-        address: "Chaussée de Mons 458, 1600 Sint-Pieters-Leeuw, Belgique",
-      },
-    },
+        address: "Chaussée de Mons 458, 1600 Sint-Pieters-Leeuw, Belgique"
+      }
+    }
   };
 
   const {
@@ -124,91 +123,86 @@ export default function Appointment() {
   };
 
   return (
-      <div className=" min-h-screen flex justify-center items-center p-10">
-        <div className="bg-white p-8 border-4 border-[#91b4ee] rounded-xl shadow-2xl max-w-lg w-full">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-semibold text-blue-600 mb-4">{title}</h1>
-            <p className="text-lg text-gray-500">{description}</p>
+    <div className="min-h-screen flex justify-center items-center p-10">
+      <div className="bg-white p-8 border-[3px] border-[#c4dccf] rounded-[2rem] shadow-[0_20px_50px_rgba(58,_120,_58,_0.7)] backdrop-blur-xl bg-white/30 max-w-lg w-full h-auto outline-offset-10 m-10">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-semibold text-[#0C1710] mb-4">{title}</h1>
+          <p className="text-lg text-[#97C2AC]">{description}</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <Input
+            placeholder={nameLabel}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
+
+          <Input
+            placeholder={prenomLabel}
+            value={prenom}
+            onChange={(e) => setPrenom(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
+
+          <Input
+            placeholder={emailLabel}
+            value={email}
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
+
+          <Input
+            placeholder={phoneLabel}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
+
+          <Input
+            placeholder={addressLabel}
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
+
+          <div className="space-y-2">
+            <label htmlFor="appointmentType" className="block text-sm font-medium text-[#97C2AC]">
+              {typeLabel}
+            </label>
+            <Select value={appointmentType} onValueChange={setAppointmentType}>
+              <SelectTrigger className="w-full bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out">
+                <SelectValue placeholder={typeLabel} />
+              </SelectTrigger>
+              <SelectContent>
+                {types.map((type, index) => (
+                  <SelectItem key={index} value={type.toLowerCase()}>
+                    {type}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Champs Input avec touche de rose */}
-            <Input
-                placeholder={nameLabel}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
-            />
+          <Textarea
+            placeholder={messageLabel}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-3xl px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+          />
 
-            <Input
-                placeholder={prenomLabel}
-                value={prenom}
-                onChange={(e) => setPrenom(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2  transition-all duration-300 ease-in-out"
-            />
-
-            <Input
-                placeholder={emailLabel}
-                value={email}
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
-            />
-
-            <Input
-                placeholder={phoneLabel}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
-            />
-
-            <Input
-                placeholder={addressLabel}
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out"
-            />
-
-            {/* Sélecteur dynamique avec rose et ombre */}
-            <div className="space-y-2">
-              <label htmlFor="appointmentType" className="block text-sm font-medium text-gray-600">
-                {typeLabel}
-              </label>
-              <Select value={appointmentType} onValueChange={setAppointmentType}>
-                <SelectTrigger className="w-full bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg">
-                  <SelectValue placeholder={typeLabel} />
-                </SelectTrigger>
-                <SelectContent>
-                  {types.map((type, index) => (
-                      <SelectItem key={index} value={type.toLowerCase()}>
-                        {type}
-                      </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Textarea stylisée avec rose au focus */}
-            <Textarea
-                placeholder={messageLabel}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                className="bg-gray-100 border-2 border-transparent rounded-lg px-4 py-3 focus:ring-2  transition-all duration-300 ease-in-out"
-            />
-
-            {/* Bouton de soumission avec rose au survol */}
-            <Button type="submit" className=" text-white w-full py-3 rounded-lg  transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 ">
-              {submitButton} <Send className="ml-2 h-4 w-4" />
-            </Button>
-          </form>
-        </div>
+          <Button type="submit" className="bg-[#97C2AC] hover:bg-[#97C2AC]/90 text-white w-full py-3 rounded-full transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-[#97C2AC]/50">
+            {submitButton} <Send className="ml-2 h-4 w-4" />
+          </Button>
+        </form>
       </div>
-
+    </div>
   );
 }

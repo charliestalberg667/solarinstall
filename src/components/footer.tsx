@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useLanguage } from "@/components/language-provider";
+import { BrandsScroll } from "@/components/brands-scroll";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -23,24 +24,27 @@ const Footer = () => {
   const { copyright, conditions, privacy, contact } = content[language];
 
   return (
-    <footer className=" py-6 bg-[#F5F5F5] text-[#003366] p-6 mt-24">
-      <div className="container mx-auto text-center px-4">
-        <p className="text-sm md:text-base">
-          &copy; {new Date().getFullYear()} {copyright}
-        </p>
-        <div className="mt-4 flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
-          <a href="/conditions" className="hover:underline">
-            {conditions}
-          </a>
-          <a href="/privacy" className="hover:underline">
-            {privacy}
-          </a>
-          <a href="/contact" className="hover:underline">
-            {contact}
-          </a>
+    <>
+      <BrandsScroll />
+      <footer className=" py-6 bg-[#ededed] text-[#355834] p-6">
+        <div className="container mx-auto text-center px-4">
+          <p className="text-sm md:text-base">
+            &copy; {new Date().getFullYear()} {copyright}
+          </p>
+          <div className="mt-4 flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
+            <a href="/conditions" className="hover:underline">
+              {conditions}
+            </a>
+            <a href="/privacy" className="hover:underline">
+              {privacy}
+            </a>
+            <a href="/contact" className="hover:underline">
+              {contact}
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

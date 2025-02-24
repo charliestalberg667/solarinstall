@@ -16,6 +16,7 @@ interface Card {
   description: string;
   image?: string;
   video?: string;
+  gif?: string;
 }
 
 interface CTA {
@@ -49,9 +50,17 @@ function BuildingsDesktop({ content }: { content: Content }) {
                             <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
                               <source src={card.video} type="video/mp4" />
                             </video>
+                        ) : card.gif ? (
+                            <Image
+                                src={card.gif}
+                                alt={card.title}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                                unoptimized
+                            />
                         ) : (
                             <Image
-
                                 src={card.image||"/public/favicon.png"}
                                 alt={card.title}
                                 fill
@@ -86,6 +95,15 @@ function BuildingsDesktop({ content }: { content: Content }) {
                             <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
                               <source src={card.video} type="video/mp4" />
                             </video>
+                        ) : card.gif ? (
+                            <Image
+                                src={card.gif}
+                                alt={card.title}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                                unoptimized
+                            />
                         ) : (
                             <Image
                                 src={card.image||"/public/favicon.png"}
@@ -125,6 +143,20 @@ function BuildingsMobile({ content }: { content: Content }) {
                         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                           <source src={card.video} type="video/mp4" />
                         </video>
+                    ) : card.gif ? (
+                        <>
+                          <Image
+                              src={card.gif}
+                              alt={card.title}
+                              layout="fill"
+                              className="object-cover"
+                              priority={index === 0}
+                              unoptimized
+                          />
+                          <h2 className="text-xl font-bold text-white text-center">
+                            {card.title}
+                          </h2>
+                        </>
                     ) : (
                         <>
                           <Image
