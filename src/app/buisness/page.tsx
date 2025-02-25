@@ -33,7 +33,7 @@ function EnterpriseDesktop({ content }: { content: Content }) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-2 text-[#355834]">{title}</h1>
-          <p className="text-xl">{subtitle}</p>
+          <p className="text-xl text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -133,7 +133,7 @@ function EnterpriseMobile({ content }: { content: Content }) {
         <div id="content-section" className="container mx-auto px-4">
           <div className="text-center mb-7">
             <h1 className="text-4xl font-bold text-[#355834]">{title}</h1>
-            <p className="text-sm text-blue-600">{subtitle}</p>
+            <p className="text-sm text-[#43964c]">{subtitle}</p>
           </div>
 
           <div className="grid gap-8 pb-5">

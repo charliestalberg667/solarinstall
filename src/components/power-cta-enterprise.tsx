@@ -163,7 +163,7 @@ export function PowerCTAEnterpriseMobile() {
             <Link href="/appointment">
               <button
                   type="submit"
-                  className="border-2 border-[#FF4D00] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-[#FF4D00] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                  className="border-2 border-[#d36135] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-[#d36135] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
               >
                 {t.makeAppointment}
                 <svg
@@ -181,7 +181,7 @@ export function PowerCTAEnterpriseMobile() {
 
             <button
                 type="submit"
-                className="mt-4 border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                className="mt-4 border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
             >
               {t.exploreShowroom}
               <svg
@@ -197,20 +197,17 @@ export function PowerCTAEnterpriseMobile() {
             </button>
           </div>
 
-          <div className="flex flex-col items-center gap-4 justify-center">
-            <p className="text-xl font-medium">{t.inverterText}</p>
-            <p className="text-xl font-medium">{t.batteryText}</p>
-          </div>
+
 
           <div className="flex flex-col items-center gap-4 justify-center">
             <p className="text-xl font-medium">
               {t.transformText.part1}{" "}
-              <span className="text-[#FF4D00]">{t.transformText.part2}</span>
+              <span className="text-[#d36135]">{t.transformText.part2}</span>
             </p>
             <Link href="https://www.facebook.com/61566318248064">
               <button
                   type="submit"
-                  className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                  className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
               >
                 {t.exampleButton}
                 <svg
@@ -226,13 +223,16 @@ export function PowerCTAEnterpriseMobile() {
               </button>
             </Link>
           </div>
-
+          <div className="flex flex-col items-center gap-4 justify-center">
+            <p className="text-xl font-medium">{t.inverterText}</p>
+            <p className="text-xl font-medium">{t.batteryText}</p>
+          </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <p className="text-xl font-medium">{t.moreCapacityText}</p>
             <Link href="/industrial">
               <button
                   type="submit"
-                  className="border-2 border-blue-500 p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-blue-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                  className="border-2 border-[#d36135] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full  before:bg-[#d36135] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
               >
                 {t.industryButton}
                 <svg

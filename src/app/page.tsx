@@ -289,7 +289,7 @@ export default function Home() {
           shortDescription:
             "Propulsez votre entreprise avec nos systèmes énergétiques et économisez.",
           image: "/images/enterprise.png",
-          link: "/enterprise",
+          link: "/buisness",
         },
         {
           title: "Systèmes solaires pour l'industrie",
@@ -333,7 +333,7 @@ export default function Home() {
           shortDescription:
             "Stimuleer uw bedrijf met krachtige zonne-energieoplossingen en bespaar.",
           image: "/images/enterprise.png",
-          link: "/enterprise",
+          link: "/buisness",
         },
         {
           title: "Zonne-installaties voor industrie",

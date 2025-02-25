@@ -124,8 +124,8 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
-          <h1 className="text-4xl font-bold">{title}</h1>
-          <p className="text-sm text-blue-600">{subtitle}</p>
+          <h1 className="text-4xl font-bold text-[#355834]">{title}</h1>
+          <p className="text-sm text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -146,7 +146,7 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
                       priority={index === 0}
                       unoptimized
                     />
-                    <h2 className="text-xl font-bold text-white text-center">
+                    <h2 className="text-xl font-bold text-[#355834] text-center">
                       {card.title}
                     </h2>
                   </>
@@ -159,7 +159,7 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
                       className="object-cover"
                       priority={index === 0}
                     />
-                    <h2 className="text-xl font-bold text-white text-center">
+                    <h2 className="text-xl font-bold text-[#355834] text-center">
                       {card.title}
                     </h2>
                   </>
