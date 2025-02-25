@@ -75,7 +75,7 @@ function ResidentialDesktop({ content }: { content: Content }) {
             ) : (
               <>
                 <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                  <h2 className="text-3xl font-bold text-center ">
+                  <h2 className="text-3xl font-bold text-center text-[#355834] ">
                     {card.title}
                   </h2>
                   <p className="text-gray-800 leading-relaxed text-justify">

@@ -168,7 +168,7 @@ function HomeMobile({ content }: { content: Content }) {
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
           <h1 className="text-4xl font-bold text-[#355834] ">{title}</h1>
-          <p className="text-sm text-[#43964c]">{subtitle}</p>
+          <p className="text-lg text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">

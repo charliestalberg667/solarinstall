@@ -12,12 +12,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend("re_gYvkYCWq_BV9qcqD8kkBBgADJ6tbnRjzj");
 
     const mailOptions = {
       from: "SolarInstall Contact <onboarding@resend.dev>",
       //to: process.env.BUSINESS_EMAIL as string,
-      to: "gst@solarstock.be",
+      to: "charlie.stalberg@gmail.com",
       reply_to: email,
       subject: `SolarInstall Contact (${name}, ${email})`,
       text: `SolarInstall Contact (${name}, ${email})\nMESSAGE UNDERNEATH THIS LINE\n-------------------------------------\n\n${message}`,
