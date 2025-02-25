@@ -2,10 +2,6 @@
 import { useState, useEffect } from "react";
 // import Image from "next/image"; // Unused import, consider removing if not needed
 import { useLanguage } from "@/components/language-provider";
-import {
-  PowerCTAIndustrial,
-  PowerCTAIndustrialMobile,
-} from "@/components/power-cta-industrial";
 
 
 interface Content {
