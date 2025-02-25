@@ -17,7 +17,7 @@ import 'dotenv/config';
 
                     const mailOptions = {
                       from: 'onboarding@resend.dev',
-                      to: 'gst@solarstock.be',
+                      to: 'charlie.stalberg@gmail.com',
                       reply_to: email,
                       subject: `SolarInstall Appointment Request (${name})`,
                       text: `
