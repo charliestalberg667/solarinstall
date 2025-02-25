@@ -206,11 +206,6 @@ export default function Residential() {
           image: "/images/examplerooftop.png"
         },
         {
-          title: "Mobilité Électrique Intelligente",
-          description: "Passez à la mobilité durable avec nos solutions de recharge intelligentes. Notre borne de recharge connectée s'adapte automatiquement à votre production solaire pour privilégier la charge de votre véhicule aux heures les plus favorables. Profitez d'une interface intuitive pour programmer vos recharges, suivre votre consommation et optimiser vos coûts. Compatible avec tous les véhicules électriques, notre solution vous garantit une recharge rapide et sécurisée.",
-          image: "/images/charger.jpg"
-        },
-        {
           title: "Monitoring Intelligent",
           description: "Prenez le contrôle total de votre installation avec notre système de monitoring dernière génération. Notre application vous offre une vision claire et détaillée de votre production solaire, votre consommation électrique et vos économies réalisées. Visualisez en temps réel l'impact positif de votre installation sur l'environnement, recevez des notifications personnalisées et optimisez votre autoconsommation grâce à nos algorithmes d'intelligence artificielle.",
           video: "/images/videoonduleur.mp4"
@@ -219,6 +214,11 @@ export default function Residential() {
           title: "Solution de Stockage Avancée",
           description: "Maximisez votre indépendance énergétique avec nos solutions de stockage innovantes. Nos batteries intelligentes stockent votre surplus d'énergie solaire pendant la journée pour la restituer quand vous en avez besoin. Grâce à notre technologie de gestion intelligente, votre système anticipe vos besoins énergétiques et optimise automatiquement l'utilisation de l'énergie stockée, vous garantissant une autonomie maximale et des économies accrues.",
           gif: "/images/battery-animation.gif"
+        },
+        {
+          title: "Mobilité Électrique Intelligente",
+          description: "Passez à la mobilité durable avec nos solutions de recharge intelligentes. Notre borne de recharge connectée s'adapte automatiquement à votre production solaire pour privilégier la charge de votre véhicule aux heures les plus favorables. Profitez d'une interface intuitive pour programmer vos recharges, suivre votre consommation et optimiser vos coûts. Compatible avec tous les véhicules électriques, notre solution vous garantit une recharge rapide et sécurisée.",
+          image: "/images/charger.jpg"
         }
       ],
       cta: {
@@ -235,12 +235,7 @@ export default function Residential() {
           title: "Expertise in Zonne-installaties",
           description: "Ons team van gecertificeerde experts analyseert zorgvuldig uw dak voor een optimale installatie van zonnepanelen. We houden rekening met de oriëntatie, hellingshoek en structuur van uw dak om uw energieproductie te maximaliseren. Dankzij onze geavanceerde technologieën en expertise garanderen we een esthetische integratie die de architectuur van uw huis respecteert en tegelijkertijd de energieprestaties optimaliseert.",
           image: "/images/examplerooftop.png"
-        },
-        {
-          title: "Slimme Elektrische Mobiliteit",
-          description: "Stap over op duurzame mobiliteit met onze slimme oplaadoplossingen. Ons connected laadstation past zich automatisch aan uw zonne-energieproductie aan om uw voertuig op de meest gunstige momenten op te laden. Profiteer van een intuïtieve interface om uw oplaadbeurten te programmeren, uw verbruik te volgen en uw kosten te optimaliseren. Compatibel met alle elektrische voertuigen, onze oplossing garandeert u een snelle en veilige oplaadbeurt.",
-          image: "/images/charger.jpg"
-        },
+        },       
         {
           title: "Intelligente Monitoring",
           description: "Neem de volledige controle over uw installatie met ons nieuwste monitoring systeem. Onze applicatie biedt u een helder en gedetailleerd overzicht van uw zonne-energieproductie, elektriciteitsverbruik en gerealiseerde besparingen. Bekijk in realtime de positieve impact van uw installatie op het milieu, ontvang gepersonaliseerde meldingen en optimaliseer uw eigen verbruik dankzij onze AI-algoritmes.",
@@ -250,6 +245,11 @@ export default function Residential() {
           title: "Geavanceerde Opslagoplossing",
           description: "Maximaliseer uw energieonafhankelijkheid met onze innovatieve opslagoplossingen. Onze slimme batterijen slaan uw overtollige zonne-energie overdag op om deze te gebruiken wanneer u deze nodig heeft. Dankzij onze slimme beheertechnologie anticipeert uw systeem op uw energiebehoeften en optimaliseert het automatisch het gebruik van opgeslagen energie, waardoor u maximale autonomie en verhoogde besparingen garandeert.",
           gif: "/images/battery-animation.gif"
+        },
+        {
+          title: "Slimme Elektrische Mobiliteit",
+          description: "Stap over op duurzame mobiliteit met onze slimme oplaadoplossingen. Ons connected laadstation past zich automatisch aan uw zonne-energieproductie aan om uw voertuig op de meest gunstige momenten op te laden. Profiteer van een intuïtieve interface om uw oplaadbeurten te programmeren, uw verbruik te volgen en uw kosten te optimaliseren. Compatibel met alle elektrische voertuigen, onze oplossing garandeert u een snelle en veilige oplaadbeurt.",
+          image: "/images/charger.jpg"
         }
       ],
       cta: {

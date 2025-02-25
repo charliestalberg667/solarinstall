@@ -28,7 +28,7 @@ function IndustrialComponent({ content }: { content: Content }) {
           {Array.isArray(cards) && cards.length > 0 ? (
             cards.map((card, index) => (
               <div key={index} className="grid gap-4 items-center">
-                <div className="relative rounded-lg overflow-hidden">
+                <div className="relative  overflow-hidden">
                   <h2 className="text-xl font-bold text-[#355834] text-center">
                     {card.title}
                   </h2>

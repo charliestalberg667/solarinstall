@@ -175,6 +175,7 @@ function HomeMobile({ content }: { content: Content }) {
           {cards.map((card, index) => (
             <div key={index} className="grid gap-4 items-center">
               <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <Link href={card.link}>
                 {card.video ? (
                   <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                     <source src={card.video} type="video/mp4" />
@@ -211,6 +212,7 @@ function HomeMobile({ content }: { content: Content }) {
                     </div>
                   </>
                 )}
+                </Link>
               </div>
               <div className="flex flex-col h-full justify-between md:px-4 py-4">
                 <p className="text-gray-700 text-center leading-relaxed">
