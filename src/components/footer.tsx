@@ -29,7 +29,7 @@ const Footer = () => {
       <footer className="py-6 bg-[#ededed] text-[#14281D] p-6">
         <div className="container mx-auto text-center px-4">
 
-          <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
             <a href="/conditions" className="hover:underline">
               {conditions}
             </a>
