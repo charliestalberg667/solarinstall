@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 mx-7 px-4 gap-8 mt-4 mb-8 ">
           <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
+            <Link href="/public" className="flex items-center">
               <Image
                 src="/images/logoblack.png"
                 alt="Logo"
