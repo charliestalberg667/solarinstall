@@ -13,11 +13,11 @@ import 'dotenv/config';
                       );
                     }
 
-                    const resend = new Resend("re_gYvkYCWq_BV9qcqD8kkBBgADJ6tbnRjzj");
+                    const resend = new Resend("re_GaCag4pC_FshoGwwsnWbro7eXNFMY3Gun");
 
                     const mailOptions = {
-                      from: 'onboarding@resend.dev',
-                      to: 'charlie.stalberg@gmail.com',
+                      from: 'SolarInstall Contact <onboarding@resend.dev>',
+                      to: 'gst@solarstock.be',
                       reply_to: email,
                       subject: `SolarInstall Appointment Request (${name})`,
                       text: `
