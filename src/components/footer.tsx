@@ -40,7 +40,7 @@ const Footer = () => {
               {contact}
             </a>
             <p className="text-sm md:text-base mt-16">
-            &copy; {new Date().getFullYear()} {copyright}
+            &copy; {"2025"} {copyright}
           </p>
           </div>
         </div>
