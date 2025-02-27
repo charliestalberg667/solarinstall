@@ -8,7 +8,6 @@ interface Content {
   title: string;
   subtitle: string;
   cards: Card[];
-  cta: CTA;
 }
 
 interface Card {
@@ -18,12 +17,6 @@ interface Card {
   video?: string;
   gif?: string;
   youtube?: string; // Add youtube property
-}
-
-interface CTA {
-  title: string;
-  description: string;
-  button: string;
 }
 
 function BuildingsDesktop({ content }: { content: Content }) {
@@ -111,7 +104,7 @@ function BuildingsDesktop({ content }: { content: Content }) {
                   </p>
                   <div></div>
                 </div>
-                <div className="relative h-[400px] m-4 rounded-lg overflow-hidden">
+                <div className="relative h-[400px] w-[1000] m-4 rounded-lg overflow-hidden">
                   {card.youtube ? (
                     <iframe
                       width="100%"
@@ -162,7 +155,7 @@ function BuildingsDesktop({ content }: { content: Content }) {
 }
 
 function BuildingsMobile({ content }: { content: Content }) {
-  const { title, subtitle, cards } = content;
+  const { title, subtitle, cards} = content;
 
   return (
     <div>
@@ -220,18 +213,15 @@ function BuildingsMobile({ content }: { content: Content }) {
                       className="object-cover"
                       priority={index === 0}
                     />
-                    <h2 className="text-xl font-bold text-[#355834] text-center">
-                      {card.title}
-                    </h2>
                   </>
                 )}
               </div>
               <div className="flex flex-col h-full justify-between ">
-                <h2 className="text-xl my-4 font-bold text-[#355834] text-center">
+                <h2 className="text-xl m-4 font-bold text-center text-[#355834]">
                   {card.title}
                 </h2>
                 <p className="text-gray-800 mx-4 text-justify leading-relaxed">
-                  {card.description}
+                  {card.shortDescription}
                 </p>
                 <div className="flex mt-4 justify-center">
                   {/* Additional content could go here */}
@@ -261,91 +251,91 @@ export default function Industrial() {
 
   const content = {
     fr: {
-      title: "Solution solaire",
+      title: "Installation Industrielle Solaire",
       subtitle: "Des solutions sur mesure pour votre industrie",
       cards: [
         {
-          title: "Tous types de toits",
-          description:
-            "Nos experts installent des panneaux solaires sur tout type de toit. Que vous ayez un toit plat, incliné ou complexe, nous avons la solution adaptée à votre situation. Nous utilisons des technologies de pointe pour garantir une intégration parfaite et esthétique, tout en maximisant la production d'énergie. Notre équipe qualifiée assure une installation rapide et efficace, en minimisant les perturbations pour les occupants de l'immeuble. Faites confiance à notre expertise pour une solution énergétique durable et rentable.",
-          image: "/images/roof-installation.jpg",
+          title: "Énergie Solaire Industrielle",
+          description: "L’énergie solaire industrielle constitue une alternative fiable, économique et respectueuse de l’environnement aux énergies fossiles. Nos solutions sur mesure s’adaptent aux besoins spécifiques de chaque industrie, garantissant une efficacité optimale. Elles permettent de réduire considérablement les coûts énergétiques tout en assurant une alimentation stable et durable.",
+          shortDescription: "Une solution verte et rentable pour répondre aux besoins énergétiques industriels. Nos systèmes garantissent une production efficace tout en réduisant les coûts.",
+          image: "/images/introduction-solaire.jpg",
         },
         {
-          title: "Borne de recharge universelle",
-          description:
-            "Rechargez votre véhicule électrique efficacement avec nos bornes de recharge universelles. Optimisées pour un usage domestique, elles sont compatibles avec tous les modèles de voitures électriques et hybrides rechargeables. Nos bornes offrent une charge rapide, sécurisée et économique, tout en s'intégrant parfaitement à votre installation solaire. Profitez d'une solution de recharge pratique et fiable, qui vous permet de maximiser vos économies d'énergie et de réduire votre empreinte carbone. Nos experts vous accompagnent dans le choix et l'installation de la borne la mieux adaptée à vos besoins.",
-          image: "/images/charger.jpg",
+          title: "Schémas de Branchement",
+          description: "Nos schémas de raccordement assurent une conversion optimale de l’énergie solaire en électricité utilisable. Grâce à des onduleurs haute performance et une intégration intelligente, nous maximisons l’efficacité énergétique. Nos systèmes permettent une connexion fluide au réseau électrique et assurent une gestion efficace des flux d’énergie, optimisant ainsi la distribution et la consommation.",
+          shortDescription: "Conception avancée pour des installations photovoltaïques performantes. Optimisation de la conversion et de l’intégration au réseau électrique.",
+          image: "/images/shema-solaire.png",
         },
         {
-          title: "Surveillance en temps réel",
-          description:
-            "Gardez le contrôle sur votre consommation d'énergie grâce à notre plateforme de surveillance intuitive. Suivez votre production d'énergie solaire en temps réel grâce à des graphiques détaillés et des alertes personnalisées. Accédez à des conseils pour optimiser votre usage énergétique et maximiser vos économies. Que vous soyez chez vous ou à l'autre bout du monde, notre application mobile et web vous permet de surveiller votre installation solaire à tout moment. Prenez des décisions éclairées pour un avenir plus durable et économisez sur vos factures d'énergie.",
-          image: "/images/applivoltek.png",
-        },
-        {
-          title: "ESS",
-          description:
-            "Il offre une expansion flexible, une longue durée de vie et des fonctionnalités de sécurité avancées, y compris une surveillance intelligente via le cloud 24/7. Parfait pour un stockage d'énergie fiable et évolutif en Europe. Le système est conçu pour s'adapter aux besoins croissants de votre entreprise, avec une maintenance simplifiée et une performance optimale assurée par un refroidissement actif par liquide.",
+          title: "ESS (Load Balancing)",
+          description: "Ce système de répartition intelligente stocke l’énergie excédentaire et la redistribue de manière optimale. Grâce à des algorithmes avancés, il équilibre la consommation énergétique en fonction de la demande. Idéal pour les périodes de forte sollicitation, il assure une alimentation stable et réduit les pertes d’énergie.",
+          shortDescription: "Optimisation de la consommation énergétique grâce à un stockage intelligent et une redistribution efficace, même en cas de forte demande.",
           image: "/images/EPES233.webp",
         },
         {
-          title: "ESP",
-          description:
-            "La solution de stockage d'énergie tout-en-un est préassemblée pour une installation facile et offre des performances élevées grâce à la technologie PCS avancée et au couplage AC sans arc DC. Avec une possibilité d'expansion flexible et un faible coût initial, le système peut s'adapter aux besoins croissants. Le refroidissement actif par liquide (chauffage) et une température de fonctionnement optimale assurent une longue durée de vie de plus de 8000 cycles, simplifiant ainsi la maintenance.",
+          title: "ESS (Unload Balancing)",
+          description: "Ce système intelligent permet de gérer efficacement les surplus d’énergie solaire. L’énergie stockée est réinjectée dans le réseau pendant les périodes de faible production, garantissant ainsi une alimentation continue. Des dispositifs de sécurité avancés protègent le système contre les surcharges et assurent une performance fiable à long terme.",
+          shortDescription: "Une gestion efficace des surplus d’énergie pour garantir une alimentation continue et sécurisée, avec protection contre les surcharges.",
           image: "/images/EPES233inside.webp",
         },
+        {
+          title: "EPPS 209",
+          description: "Une solution de stockage avancée conçue pour répondre aux exigences des industries modernes. Dotée d’une grande capacité et d’un couplage AC sans arc DC, elle assure un fonctionnement sûr et efficace. Son système de refroidissement liquide actif prolonge la durée de vie des équipements tout en réduisant les coûts de maintenance.",
+          shortDescription: "Stockage haute capacité avec couplage AC et refroidissement liquide pour une efficacité et une durabilité maximales.",
+          image: "/images/epps-209.jpg",
+        },
+        {
+          title: "H143/197",
+          description: "Ce système robuste est conçu pour répondre aux besoins énergétiques les plus exigeants. Grâce à une technologie avancée, il offre une performance stable et durable, même dans des conditions difficiles. Son refroidissement actif permet de maintenir des températures optimales, réduisant ainsi les risques de panne et les coûts de maintenance.",
+          shortDescription: "Solution fiable et performante avec refroidissement actif pour garantir une stabilité énergétique même en conditions extrêmes.",
+          image: "/images/EPHS143-197.webp",
+        },
       ],
-      cta: {
-        title: "Plus d'informations",
-        description:
-          "Contactez-nous pour un devis gratuit et personnalisé. Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans votre projet d'installation solaire. Ensemble, construisons un avenir plus vert et plus économique.",
-        button: "Contact",
-      },
     },
     nl: {
-      title: "Zonne-installatie",
+      title: "Industriële Zonne-installatie",
       subtitle: "Oplossingen op maat voor uw Industrie",
       cards: [
         {
-          title: "Alle soorten daken",
-          description:
-            "Onze experts installeren zonnepanelen op elk type dak. Of u nu een plat, schuin of complex dak heeft, wij hebben de oplossing die bij uw situatie past. Wij maken gebruik van geavanceerde technologieën om een perfecte en esthetische integratie te garanderen, terwijl we de energieproductie maximaliseren. Ons gekwalificeerde team zorgt voor een snelle en efficiënte installatie, met minimale verstoring voor de bewoners van het gebouw. Vertrouw op onze expertise voor een duurzame en rendabele energieoplossing.",
-          image: "/images/roof-installation.jpg",
+          title: "Industriële Zonne-energie",
+          description: "Industriële zonne-energie biedt een betrouwbaar, kostenefficiënt en milieuvriendelijk alternatief voor traditionele energiebronnen. Onze op maat gemaakte oplossingen zorgen voor maximale efficiëntie en naadloze integratie met bestaande infrastructuur. Door slim energiebeheer helpen we bedrijven hun energiekosten te verlagen en een duurzamere toekomst op te bouwen.",
+          shortDescription: "Een groene en voordelige energieoplossing. Onze systemen zorgen voor optimale prestaties en lagere energiekosten.",
+          image: "/images/introduction-solaire.jpg",
         },
         {
-          title: "Universele laadpaal",
-          description:
-            "Laad uw elektrische voertuig efficiënt op met onze universele laadpalen. Geoptimaliseerd voor thuisgebruik, zijn ze compatibel met alle modellen elektrische en plug-in hybride voertuigen. Onze laadpalen bieden een snelle, veilige en economische oplaadoplossing, die perfect integreert met uw zonne-installatie. Profiteer van een handige en betrouwbare oplaadoplossing, waarmee u uw energiebesparingen maximaliseert en uw ecologische voetafdruk verkleint. Onze experts helpen u bij het kiezen en installeren van de laadpaal die het beste bij uw behoeften past.",
-          image: "/images/charger.jpg",
+          title: "Aansluitschema's",
+          description: "Onze aansluitingsschema’s zijn ontworpen om een optimale omzetting van zonne-energie te garanderen. Door het gebruik van hoogwaardige omvormers en intelligente netintegratie verbeteren we de efficiëntie van grootschalige PV-installaties. Dit resulteert in een stabiele en duurzame energievoorziening met minimale verliezen.",
+          shortDescription: "Efficiënte omzetting en integratie in het elektriciteitsnet voor maximale prestaties.",
+          image: "/images/shema-solaire.png",
         },
         {
-          title: "Realtime monitoring",
-          description:
-            "Houd controle over uw energieverbruik met ons intuïtieve monitoringplatform. Volg uw zonne-energieproductie in realtime met gedetailleerde grafieken en gepersonaliseerde meldingen. Krijg toegang tot advies om uw energiegebruik te optimaliseren en uw besparingen te maximaliseren. Of u nu thuis bent of aan de andere kant van de wereld, onze mobiele en webapplicatie stelt u in staat om uw zonne-installatie op elk moment te monitoren. Neem weloverwogen beslissingen voor een duurzamere toekomst en bespaar op uw energierekeningen.",
-          image: "/images/applivoltek.png",
-        },
-        {
-          title: "ESS",
-          description:
-            "Het biedt flexibele uitbreiding, een lange levensduur en geavanceerde veiligheidsfuncties, waaronder intelligente 24/7 cloudbewaking. Perfect voor betrouwbare en schaalbare energieopslag in Europa. Het systeem is ontworpen om aan de groeiende behoeften van uw bedrijf te voldoen, met vereenvoudigd onderhoud en optimale prestaties dankzij actieve vloeistofkoeling.",
+          title: "ESS (Load Balancing)",
+          description: "Ons intelligente verdelingssysteem slaat overtollige zonne-energie op en verdeelt deze op het juiste moment. Met geavanceerde algoritmen wordt de energiestroom automatisch aangepast aan de vraag. Dit helpt bedrijven om piekbelastingen beter te beheren en de betrouwbaarheid van hun energievoorziening te verhogen.",
+          shortDescription: "Slim energiebeheer voor een stabiele en efficiënte verdeling, zelfs bij hoge vraag.",
           image: "/images/EPES233.webp",
         },
         {
-          title: "ESP",
-          description:
-            "De All-in-One energieopslagoplossing is vooraf gemonteerd voor eenvoudige installatie en biedt hoge prestaties dankzij de geavanceerde PCS-technologie en AC-koppeling zonder DC-boog. Met een flexibele uitbreidingsmogelijkheid en lage initiële kosten kan het systeem worden aangepast aan groeiende behoeften. De actieve vloeistofkoeling (verwarming) en een optimale bedrijfstemperatuur zorgen voor een lange levensduur van meer dan cycli, wat onderhoud eenvoudig maakt.",
+          title: "ESS (Unload Balancing)",
+          description: "Dit systeem zorgt voor een efficiënte herverdeling van opgeslagen zonne-energie tijdens periodes van lage productie. Dankzij ingebouwde beschermingsmechanismen worden overbelasting en energieverliezen geminimaliseerd. Zo blijft de energievoorziening stabiel en veilig, met maximale benutting van de opgewekte stroom.",
+          shortDescription: "Optimale benutting van overtollige energie en veilige distributie zonder risico op overbelasting.",
           image: "/images/EPES233inside.webp",
         },
+        {
+          title: "EPPS 209",
+          description: "Een robuuste opslagoplossing met hoge capaciteit en AC-koppeling zonder DC-boog. Dankzij actieve vloeistofkoeling blijven de prestaties constant en wordt de levensduur van de installatie verlengd. De eenvoudige installatie en het minimale onderhoud maken het een kosteneffectieve keuze voor energie-intensieve industrieën.",
+          shortDescription: "Opslag met hoge capaciteit, AC-koppeling en efficiënte koeling voor duurzame prestaties.",
+          image: "/images/epps-209.jpg",
+        },
+        {
+          title: "H143/197",
+          description: "Dit krachtige systeem is ontworpen voor industriële toepassingen die een stabiele en betrouwbare energievoorziening vereisen. Het heeft een lange levensduur en biedt uitstekende prestaties, zelfs in extreme omstandigheden. De actieve koeling houdt de temperatuur onder controle, waardoor slijtage en onderhoudskosten worden verminderd.",
+          shortDescription: "Robuust en betrouwbaar energiesysteem met geavanceerde koeling voor optimale prestaties.",
+          image: "/images/EPHS143-197.webp",
+        },
       ],
-      cta: {
-        title: "Meer informatie",
-        description:
-          "Neem contact met ons op voor een gratis en persoonlijke offerte. Ons team van experts staat klaar om al uw vragen te beantwoorden en u te begeleiden bij uw zonne-installatieproject. Samen bouwen we aan een groenere en economischere toekomst.",
-        button: "Contact",
-      },
     },
   };
-
+  
   if (!mounted) return null;
 
   const currentContent = content[language];
