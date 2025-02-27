@@ -303,8 +303,9 @@ export default function Buildings() {
           title: "Nex Chargeur Voiture",
           subtitle: "Chargez votre véhicule électrique en toute simplicité",
           description:
-            "Rechargez votre véhicule électrique efficacement avec nos bornes de recharge universelles. Optimisées pour une utilisation domestique, elles sont compatibles avec tous les modèles de voitures électriques et hybrides rechargeables. Nos bornes offrent une charge rapide, sécurisée et économique, tout en s'intégrant parfaitement à votre installation solaire. Profitez d'une solution de recharge pratique et fiable, qui vous permet de maximiser vos économies d'énergie et de réduire votre empreinte carbone. Nos experts vous accompagnent dans le choix et l'installation de la borne la mieux adaptée à vos besoins.",
-          shortDescription: "Rechargez votre véhicule électrique efficacement avec nos bornes de recharge universelles. Optimisées pour une utilisation domestique, elles sont compatibles avec tous les modèles de voitures électriques et hybrides rechargeables.",
+            "Le Nex Chargeur Voiture est une borne de recharge intelligente et universelle, compatible avec tous les véhicules électriques et hybrides rechargeables. Doté d'un système de gestion dynamique de la charge, il optimise la distribution de l'énergie tout en réduisant les coûts. Grâce à son intégration avec la plateforme NEBULA CMS, il permet une surveillance en temps réel, une gestion des utilisateurs via carte RFID et un contrôle avancé des tarifs. Son compteur MID certifié garantit une facturation fiable, sans frais cachés. Facile à installer et évolutif, il s’intègre parfaitement aux infrastructures domestiques et semi-publiques, offrant une recharge rapide, sécurisée et efficace.",
+          shortDescription:
+            "Borne de recharge intelligente avec gestion dynamique de la charge, suivi en temps réel, contrôle des tarifs et compatibilité universelle pour véhicules électriques et hybrides. Facturation fiable avec compteur MID certifié.",
           image: "/images/chargeur_voiture_2.jpg",
         },
       ],
@@ -343,11 +344,12 @@ export default function Buildings() {
           youtube: "aJZjv6BL06A",
         },
         {
-          title: "Nex Laadpaal",
+          title: "Nex Autolader",
           subtitle: "Laad uw elektrische voertuig eenvoudig op",
           description:
-            "Laad uw elektrische voertuig efficiënt op met onze universele laadpalen. Geoptimaliseerd voor thuisgebruik, zijn ze compatibel met alle modellen elektrische en plug-in hybride voertuigen. Onze laadpalen bieden een snelle, veilige en economische oplaadoplossing, die perfect integreert met uw zonne-installatie. Profiteer van een handige en betrouwbare oplaadoplossing, waarmee u uw energiebesparingen maximaliseert en uw ecologische voetafdruk verkleint. Onze experts helpen u bij het kiezen en installeren van de laadpaal die het beste bij uw behoeften past.",
-          shortDescription: "Laad uw elektrische voertuig efficiënt op met onze universele laadpalen. Geoptimaliseerd voor thuisgebruik, zijn ze compatibel met alle modellen elektrische en plug-in hybride voertuigen.",
+            "De Nex Autolader is een intelligente en universele laadoplossing, compatibel met alle elektrische en plug-in hybride voertuigen. Dankzij dynamisch laadbeheer optimaliseert hij de energiedistributie en verlaagt hij de kosten. Met integratie in het NEBULA CMS-platform biedt hij realtime monitoring, gebruikersbeheer via RFID-kaarten en geavanceerde tariefcontrole. De MID-gecertificeerde meter garandeert een betrouwbare en transparante facturatie zonder verborgen kosten. Eenvoudig te installeren en schaalbaar, past hij perfect in zowel particuliere als semi-publieke infrastructuren en biedt hij een snelle, veilige en efficiënte laadervaring.",
+          shortDescription:
+            "Slimme laadpaal met dynamisch laadbeheer, realtime monitoring, tariefcontrole en universele compatibiliteit voor elektrische en hybride voertuigen. Betrouwbare facturatie met MID-gecertificeerde meter.",
           image: "/images/chargeur_voiture_2.jpg",
         },
       ],
