@@ -13,6 +13,7 @@ interface Content {
 interface Card {
   title: string;
   description: string;
+  shortDescription: string;
   image?: string;
   video?: string;
   gif?: string;
