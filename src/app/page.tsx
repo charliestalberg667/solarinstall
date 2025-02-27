@@ -30,7 +30,7 @@ function HomeDesktop({ content }: { content: Content }) {
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h1 className="text-8xl font-bold mb-2 text-[#355834]">{title}</h1>
-          <p className=" text-[#43964c] text-xl">{subtitle}</p>
+          <p className=" text-[#3C8645] text-xl">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
@@ -168,7 +168,7 @@ function HomeMobile({ content }: { content: Content }) {
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
           <h1 className="text-4xl font-bold text-[#355834] ">{title}</h1>
-          <p className="text-lg text-[#43964c]">{subtitle}</p>
+          <p className="text-lg text-[#3C8645]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">

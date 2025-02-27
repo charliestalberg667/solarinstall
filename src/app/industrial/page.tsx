@@ -259,7 +259,7 @@ export default function Industrial() {
           title: "Énergie Solaire Industrielle",
           description: "L’énergie solaire industrielle constitue une alternative fiable, économique et respectueuse de l’environnement aux énergies fossiles. Nos solutions sur mesure s’adaptent aux besoins spécifiques de chaque industrie, garantissant une efficacité optimale. Elles permettent de réduire considérablement les coûts énergétiques tout en assurant une alimentation stable et durable.",
           shortDescription: "Une solution verte et rentable pour répondre aux besoins énergétiques industriels. Nos systèmes garantissent une production efficace tout en réduisant les coûts.",
-          image: "/images/introduction-solaire.jpg",
+          image: "/images/industrial-roof.jpg",
         },
         {
           title: "Schémas de Branchement",
@@ -301,7 +301,7 @@ export default function Industrial() {
           title: "Industriële Zonne-energie",
           description: "Industriële zonne-energie biedt een betrouwbaar, kostenefficiënt en milieuvriendelijk alternatief voor traditionele energiebronnen. Onze op maat gemaakte oplossingen zorgen voor maximale efficiëntie en naadloze integratie met bestaande infrastructuur. Door slim energiebeheer helpen we bedrijven hun energiekosten te verlagen en een duurzamere toekomst op te bouwen.",
           shortDescription: "Een groene en voordelige energieoplossing. Onze systemen zorgen voor optimale prestaties en lagere energiekosten.",
-          image: "/images/introduction-solaire.jpg",
+          image: "/images/industrial-roof.jpg",
         },
         {
           title: "Aansluitschema's",
