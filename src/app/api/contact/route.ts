@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: "SolarInstall Contact <onboarding@resend.dev>",
       //to: process.env.BUSINESS_EMAIL as string,
-      to: "gst@solarstok.be",
+      to: "spl@solarstok.be",
       reply_to: email,
       subject: `SolarInstall Contact (${name}, ${email})`,
       text: `SolarInstall Contact (${name}, ${email})\nMESSAGE UNDERNEATH THIS LINE\n-------------------------------------\n\n${message}`,
