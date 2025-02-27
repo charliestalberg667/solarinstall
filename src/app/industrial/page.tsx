@@ -269,14 +269,14 @@ export default function Industrial() {
         },
         {
           title: "ESS (Load Balancing)",
-          description: "Ce système de répartition intelligente stocke l’énergie excédentaire et la redistribue de manière optimale. Grâce à des algorithmes avancés, il équilibre la consommation énergétique en fonction de la demande. Idéal pour les périodes de forte sollicitation, il assure une alimentation stable et réduit les pertes d’énergie.",
-          shortDescription: "Optimisation de la consommation énergétique grâce à un stockage intelligent et une redistribution efficace, même en cas de forte demande.",
+          description: "Ons geavanceerde energiebeheersysteem slaat overtollige zonne-energie op en verdeelt deze efficiënt wanneer nodig. Dankzij slimme algoritmen wordt de energiestroom automatisch aangepast aan de vraag, waardoor piekbelastingen beter beheerd worden. Dit systeem vermindert de afhankelijkheid van het net en maximaliseert het eigen verbruik, wat leidt tot lagere energiekosten en een stabielere stroomvoorziening.",
+          shortDescription: "Een slimme oplossing die overtollige zonne-energie opslaat en op het juiste moment verdeelt, waardoor piekbelastingen beter beheerd worden en het energieverbruik wordt geoptimaliseerd.",
           image: "/images/EPES233.webp",
         },
         {
           title: "ESS (Unload Balancing)",
-          description: "Ce système intelligent permet de gérer efficacement les surplus d’énergie solaire. L’énergie stockée est réinjectée dans le réseau pendant les périodes de faible production, garantissant ainsi une alimentation continue. Des dispositifs de sécurité avancés protègent le système contre les surcharges et assurent une performance fiable à long terme.",
-          shortDescription: "Une gestion efficace des surplus d’énergie pour garantir une alimentation continue et sécurisée, avec protection contre les surcharges.",
+          description: "Ons systeem voor surplusbeheer herverdeelt opgeslagen zonne-energie tijdens perioden van lage productie. Dankzij geïntegreerde beveiliging voorkomt het energieverliezen en stabiliseert het de stroomvoorziening. Dit zorgt voor een continue, betrouwbare energievoorziening, zelfs bij wisselende zonneproductie en hoge vraag, terwijl de druk op het elektriciteitsnet wordt verminderd.",
+          shortDescription: "Een efficiënte oplossing voor surplusbeheer die opgeslagen energie herverdeelt bij lage productie, zodat een stabiele en continue energievoorziening gewaarborgd blijft.",
           image: "/images/EPES233inside.webp",
         },
         {
@@ -311,14 +311,14 @@ export default function Industrial() {
         },
         {
           title: "ESS (Load Balancing)",
-          description: "Ons intelligente verdelingssysteem slaat overtollige zonne-energie op en verdeelt deze op het juiste moment. Met geavanceerde algoritmen wordt de energiestroom automatisch aangepast aan de vraag. Dit helpt bedrijven om piekbelastingen beter te beheren en de betrouwbaarheid van hun energievoorziening te verhogen.",
-          shortDescription: "Slim energiebeheer voor een stabiele en efficiënte verdeling, zelfs bij hoge vraag.",
+          description: "Ons geavanceerde energiebeheersysteem slaat overtollige zonne-energie op en verdeelt deze efficiënt wanneer nodig. Dankzij slimme algoritmen wordt de energiestroom automatisch aangepast aan de vraag, waardoor piekbelastingen beter beheerd worden. Dit systeem vermindert de afhankelijkheid van het net en maximaliseert het eigen verbruik, wat leidt tot lagere energiekosten en een stabielere stroomvoorziening.",
+          shortDescription: "Een slimme oplossing die overtollige zonne-energie opslaat en op het juiste moment verdeelt, waardoor piekbelastingen beter beheerd worden en het energieverbruik wordt geoptimaliseerd.",
           image: "/images/EPES233.webp",
         },
         {
           title: "ESS (Unload Balancing)",
-          description: "Dit systeem zorgt voor een efficiënte herverdeling van opgeslagen zonne-energie tijdens periodes van lage productie. Dankzij ingebouwde beschermingsmechanismen worden overbelasting en energieverliezen geminimaliseerd. Zo blijft de energievoorziening stabiel en veilig, met maximale benutting van de opgewekte stroom.",
-          shortDescription: "Optimale benutting van overtollige energie en veilige distributie zonder risico op overbelasting.",
+          description: "Ons systeem voor surplusbeheer herverdeelt opgeslagen zonne-energie tijdens perioden van lage productie. Dankzij geïntegreerde beveiliging voorkomt het energieverliezen en stabiliseert het de stroomvoorziening. Dit zorgt voor een continue, betrouwbare energievoorziening, zelfs bij wisselende zonneproductie en hoge vraag, terwijl de druk op het elektriciteitsnet wordt verminderd.",
+          shortDescription: "Een efficiënte oplossing voor surplusbeheer die opgeslagen energie herverdeelt bij lage productie, zodat een stabiele en continue energievoorziening gewaarborgd blijft.",
           image: "/images/EPES233inside.webp",
         },
         {
