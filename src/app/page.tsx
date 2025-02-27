@@ -276,22 +276,13 @@ export default function Home() {
           link: "/residential",
         },
         {
-          title: "Systèmes solaires pour immeubles",
+          title: "Systèmes solaires pour immeubles/entreprises",
           description:
             "Optimisez la gestion énergétique de votre immeuble avec nos solutions sur mesure. Nos experts conçoivent et installent des systèmes solaires adaptés à tous les types de toits. Grâce à nos onduleurs intelligents, vous pouvez suivre vos données en temps réel via une application pratique. En plus de l'installation de bornes de recharge, nous offrons des services de maintenance et de nettoyage pour garantir des performances optimales. Favorisez une énergie verte pour tous les résidents.",
           shortDescription:
             "Optimisez la gestion énergétique de votre immeuble avec nos solutions sur mesure.",
           image: "/images/building.jpg",
           link: "/buildings",
-        },
-        {
-          title: "Solutions énergétiques pour entreprises",
-          description:
-            "Propulsez votre entreprise avec nos systèmes énergétiques de haute performance. Nous proposons des onduleurs allant jusqu'à 200 kW et des batteries jusqu'à 250 kWh, idéaux pour des applications à grande échelle. Nos solutions incluent des fonctions de sauvegarde et une gestion dynamique des tarifs pour réduire vos coûts. Nous installons également des bornes de recharge et des carports solaires pour vos équipes et flottes de véhicules. Adoptez l'efficacité énergétique et économisez.",
-          shortDescription:
-            "Propulsez votre entreprise avec nos systèmes énergétiques et économisez.",
-          image: "/images/enterprise.png",
-          link: "/buisness",
         },
         {
           title: "Systèmes solaires pour l'industrie",
@@ -320,22 +311,13 @@ export default function Home() {
           link: "/residential",
         },
         {
-          title: "Zonnepanelen voor flatgebouwen",
+          title: "Zonnepanelen voor flatgebouwen en bedrijven",
           description:
             "Verbeter het energiebeheer van uw flatgebouw met onze op maat gemaakte oplossingen. Wij ontwerpen en installeren zonne-installaties op elk type dak. Onze slimme omvormers maken realtime monitoring mogelijk via een handige app. Bovendien installeren we laadpalen en bieden we onderhouds- en reinigingsservices om de prestaties te garanderen. Samen creëren we een duurzame toekomst voor alle bewoners.",
           shortDescription:
             "Verbeter het energiebeheer van uw flatgebouw met onze zonne-oplossingen.",
           image: "/images/building.jpg",
           link: "/buildings",
-        },
-        {
-          title: "Zonnestroomoplossingen voor bedrijven",
-          description:
-            "Stimuleer uw bedrijf met krachtige zonne-energieoplossingen. Wij leveren omvormers tot 200 kW en batterijen tot 250 kWh, geschikt voor grootschalige toepassingen. Onze systemen bieden back-up functies en dynamisch tariefbeheer om kosten te optimaliseren. Daarnaast installeren we laadpalen en zonnecarports voor uw medewerkers en wagenpark. Verhoog uw efficiëntie en bespaar op energiekosten.",
-          shortDescription:
-            "Stimuleer uw bedrijf met krachtige zonne-energieoplossingen en bespaar.",
-          image: "/images/enterprise.png",
-          link: "/buisness",
         },
         {
           title: "Zonne-installaties voor industrie",

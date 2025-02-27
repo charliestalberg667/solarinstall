@@ -2,11 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
-import {
-  PowerCTAIndustrial,
-  PowerCTAIndustrialMobile,
-} from "@/components/power-cta-industrial";
-
+import {PowerCTA, PowerCTAMobile} from "@/components/power-cta";
 
 interface Content {
   title: string;
@@ -21,6 +17,7 @@ interface Card {
   image?: string;
   video?: string;
   gif?: string;
+  youtube?: string; // Add youtube property
 }
 
 interface CTA {
@@ -29,169 +26,220 @@ interface CTA {
   button: string;
 }
 
-function IndustrialDesktop({ content }: { content: Content }) {
+function BuildingsDesktop({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
   return (
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-2 text-[#355834]">{title}</h1>
-          <p className="text-xl">{subtitle}</p>
-        </div>
-
-        <div className="grid gap-8 pb-5">
-          {cards.map((card, index) => (
-              <div
-                  key={index}
-                  className={`grid md:grid-cols-2 gap-4 items-center ${
-                      index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
-                  }`}
-              >
-                {index % 2 === 0 ? (
-                    <>
-                      <div className="relative h-[400px] rounded-lg overflow-hidden">
-                        {card.video ? (
-                            <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
-                              <source src={card.video} type="video/mp4" />
-                            </video>
-                        ) : card.gif ? (
-                            <Image
-                                src={card.gif}
-                                alt={card.title}
-                                fill
-                                className="object-cover"
-                                priority={index === 0}
-                                unoptimized
-                            />
-                        ) : (
-                            <Image
-                                src={card.image||"/public/favicon.png"}
-                                alt={card.title}
-                                fill
-                                className="object-cover"
-                                priority={index === 0}
-                            />
-                        )}
-                      </div>
-                      <div className="flex flex-col h-full justify-between md:px-4 py-8 ">
-                        <h2 className="text-3xl font-bold text-center text-[#355834]">
-                          {card.title}
-                        </h2>
-                        <p className="text-gray-800 leading-relaxed text-justify">
-                          {card.description}
-                        </p>
-                        <div></div>
-                      </div>
-                    </>
-                ) : (
-                    <>
-                      <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                        <h2 className="text-3xl font-bold text-center text-[#355834]">
-                          {card.title}
-                        </h2>
-                        <p className="text-gray-800 leading-relaxed text-justify">
-                          {card.description}
-                        </p>
-                        <div></div>
-                      </div>
-                      <div className="relative h-[400px] rounded-lg overflow-hidden">
-                        {card.video ? (
-                            <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
-                              <source src={card.video} type="video/mp4" />
-                            </video>
-                        ) : card.gif ? (
-                            <>
-                              <Image
-                                src={card.gif}
-                                alt={card.title}
-                                fill
-                                className="object-cover"
-                                priority={index === 0}
-                                unoptimized
-                              />
-                              <h2 className="text-xl font-bold text-[#355834] text-center">
-                                {card.title}
-                              </h2>
-                            </>
-                        ) : (
-                            <Image
-                                src={card.image||"/public/favicon.png"}
-                                alt={card.title}
-                                fill
-                                className="object-cover"
-                                priority={index === 0}
-                            />
-                        )}
-                      </div>
-                    </>
-                )}
-              </div>
-          ))}
-          <PowerCTAIndustrial />
-        </div>
+    <div className="container mx-auto px-4">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-2 text-[#355834]">{title}</h1>
+        <p className="text-xl text-[#43964c]">{subtitle}</p>
       </div>
+
+      <div className="grid gap-8 pb-5">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className={`grid md:grid-cols-2 items-center shadow-[0_5px_12px_rgba(0,_0,_0,_0.05)] bg-white rounded-lg ${
+              index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
+            }`}
+          >
+            {index % 2 === 0 ? (
+              <>
+                <div className="relative h-[400px] m-4 rounded-lg overflow-hidden">
+                  {card.youtube ? (
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${card.youtube}`}
+                      title={card.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    ></iframe>
+                  ) : card.video ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source src={card.video} type="video/mp4" />
+                    </video>
+                  ) : card.gif ? (
+                    <Image
+                      src={card.gif}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                      unoptimized
+                    />
+                  ) : (
+                    <Image
+                      src={card.image || "/public/favicon.png"}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  )}
+                </div>
+                <div className="flex flex-col h-full justify-between md:px-8 py-8 ">
+                  <div>
+                    <h2 className="text-2xl font-bold text-center text-[#355834]">
+                      {card.title}
+                    </h2>
+                  </div>
+                  <p className="text-gray-800 leading-relaxed text-justify">
+                    {card.description}
+                  </p>
+                  <div></div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="flex flex-col h-full justify-between md:px-8 py-8">
+                  <div>
+                    <h2 className="text-2xl font-bold text-center text-[#355834]">
+                      {card.title}
+                    </h2>
+                  </div>
+                  <p className="text-gray-800 leading-relaxed text-justify">
+                    {card.description}
+                  </p>
+                  <div></div>
+                </div>
+                <div className="relative h-[400px] m-4 rounded-lg overflow-hidden">
+                  {card.youtube ? (
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${card.youtube}`}
+                      title={card.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    ></iframe>
+                  ) : card.video ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source src={card.video} type="video/mp4" />
+                    </video>
+                  ) : card.gif ? (
+                    <Image
+                      src={card.gif}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                      unoptimized
+                    />
+                  ) : (
+                    <Image
+                      src={card.image || "/public/favicon.png"}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+        <PowerCTA />
+      </div>
+    </div>
   );
 }
 
-function IndustrialMobile({ content }: { content: Content }) {
+function BuildingsMobile({ content }: { content: Content }) {
   const { title, subtitle, cards } = content;
 
   return (
     <div>
       <div id="content-section" className="container mx-auto px-4">
         <div className="text-center mb-7">
-          <h1 className="text-4xl font-bold text-[#355834]">{title}</h1>
-          <p className="text-sm text-[#355834]">{subtitle}</p>
+          <h1 className="text-2xl font-bold text-[#355834]">{title}</h1>
+          <p className="text-sm text-[#43964c]">{subtitle}</p>
         </div>
 
         <div className="grid gap-8 pb-5">
           {cards.map((card, index) => (
-              <div key={index} className="grid gap-4 items-center">
-                <div className="relative h-[220px] rounded-lg overflow-hidden">
-                  {card.video ? (
-                      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-                        <source src={card.video} type="video/mp4" />
-                      </video>
-                  ) : card.gif ? (
-                      <>
-                        <Image
-                            src={card.gif}
-                            alt={card.title}
-                            layout="fill"
-                            className="object-cover"
-                            priority={index === 0}
-                            unoptimized
-                        />
-                        <h2 className="text-xl font-bold text-[#355834] text-center">
-                          {card.title}
-                        </h2>
-                      </>
-                  ) : (
-                      <>
-                        <Image
-                            src={card.image||"/public/favicon.png"}
-                            alt={card.title}
-                            layout="fill"
-                            className="object-cover"
-                            priority={index === 0}
-                        />
-                        <h2 className="text-xl font-bold text-[#355834] text-center">
-                          {card.title}
-                        </h2>
-                      </>
-                  )}
-                </div>
-                <div className="flex flex-col h-full justify-between ">
-                  <p className="text-gray-800 text-justify leading-relaxed">
-                    {card.description}
-                  </p>
-                  <div className="flex mt-4 justify-center">
-                    {/* Additional content could go here */}
-                  </div>
+            <div key={index} className="grid gap-4 items-center shadow-[0_10px_25px_rgba(0,_0,_0,_0.1)] bg-white rounded-lg">
+              <div className="relative h-[220px] rounded-lg overflow-hidden">
+                {card.youtube ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${card.youtube}`}
+                    title={card.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
+                ) : card.video ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  >
+                    <source src={card.video} type="video/mp4" />
+                  </video>
+                ) : card.gif ? (
+                  <>
+                    <Image
+                      src={card.gif}
+                      alt={card.title}
+                      layout="fill"
+                      className="object-cover"
+                      priority={index === 0}
+                      unoptimized
+                    />
+                    <h2 className="text-xl font-bold text-[#355834] text-center">
+                      {card.title}
+                    </h2>
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      src={card.image || "/public/favicon.png"}
+                      alt={card.title}
+                      layout="fill"
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                    <h2 className="text-xl font-bold text-[#355834] text-center">
+                      {card.title}
+                    </h2>
+                  </>
+                )}
+              </div>
+              <div className="flex flex-col h-full justify-between ">
+                <h2 className="text-xl my-4 font-bold text-[#355834] text-center">
+                  {card.title}
+                </h2>
+                <p className="text-gray-800 mx-4 text-justify leading-relaxed">
+                  {card.description}
+                </p>
+                <div className="flex mt-4 justify-center">
+                  {/* Additional content could go here */}
                 </div>
               </div>
+            </div>
           ))}
-          <PowerCTAIndustrialMobile />
+          <PowerCTAMobile />
         </div>
       </div>
     </div>
@@ -302,8 +350,8 @@ export default function Industrial() {
 
   const currentContent = content[language];
   return isDesktop ? (
-    <IndustrialDesktop content={currentContent} />
+    <BuildingsDesktop content={currentContent} />
   ) : (
-    <IndustrialMobile content={currentContent} />
+    <BuildingsMobile content={currentContent} />
   );
 }
