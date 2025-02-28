@@ -26,13 +26,12 @@ export default function RootLayout({
   return (
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
-        <head>
+      <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
             href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
-            rel="stylesheet"
-          />
+            rel="stylesheet" />
         </head>
         <body className={inter.className}>
           <LanguageProvider>
