@@ -28,21 +28,20 @@ const Footer = () => {
       <BrandsScroll />
       <footer className="py-6 bg-[#ededed] text-[#14281D] p-6">
         <div className="container mx-auto text-center px-4">
-
-          <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
-            <a href="/conditions" className="hover:underline">
+          <nav className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+            <a href="/conditions" className="hover:underline" aria-label="Conditions générales de vente">
               {conditions}
             </a>
-            <a href="/policy" className="hover:underline">
+            <a href="/policy" className="hover:underline" aria-label="Politique de confidentialité">
               {privacy}
             </a>
-            <a href="/contact" className="hover:underline">
+            <a href="/contact" className="hover:underline" aria-label="Contactez-nous">
               {contact}
             </a>
-            <p className="text-sm md:text-base mt-16">
-            &copy; {"2025"} {copyright}
+          </nav>
+          <p className="text-sm md:text-base mt-16">
+            &copy; {new Date().getFullYear()} {copyright}
           </p>
-          </div>
         </div>
       </footer>
     </>
