@@ -27,9 +27,15 @@ export default function RootLayout({
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
         <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+            rel="stylesheet"
+          />
         </head>
         <body className={inter.className}>
-            <LanguageProvider>
+          <LanguageProvider>
             <div className="flex flex-col min-h-screen">
               <Navbar />
               <main className="flex-grow">{children}</main>
