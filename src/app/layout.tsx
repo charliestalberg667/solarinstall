@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Navbar from "@/components/navbar";
 import { LanguageProvider } from "@/components/language-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,7 +13,7 @@ export const metadata = {
   description:
     "Installation de systèmes solaires | Installatie van zonne-energiesystemen",
   keywords:
-    "solaire, installation solaire, énergie renouvelable, panneaux solaires, solutions énergétiques, énergie durable, énergie verte, zonne-energie, zonne-installatie, hernieuwbare energie, zonnepanelen, energieoplossingen, duurzame energie, groene energie",
+    "solar install, solaire, installation solaire, énergie renouvelable, panneaux solaires, solutions énergétiques, énergie durable, énergie verte, zonne-energie, zonne-installatie, hernieuwbare energie, zonnepanelen, energieoplossingen, duurzame energie, groene energie",
   robots: "index, follow",
 };
 
@@ -26,13 +25,6 @@ export default function RootLayout({
   return (
     <StrictMode>
       <html lang="fr" suppressHydrationWarning>
-      <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
-            rel="stylesheet" />
-        </head>
         <body className={inter.className}>
           <LanguageProvider>
             <div className="flex flex-col min-h-screen">
