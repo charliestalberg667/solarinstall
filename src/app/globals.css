@@ -16,11 +16,39 @@
   }
 }
 @layer base {
-  h1 {
-    font-family: "Michroma", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+/* Global font family */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/* Customize headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold for headings */
+}
+
+/* Customize buttons */
+button {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 500; /* Medium weight for buttons */
+}
+
+/* Customize links */
+a {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400; /* Regular weight for links */
+}
 }
 @layer base {
   body {
