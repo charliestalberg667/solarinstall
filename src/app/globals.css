@@ -16,9 +16,14 @@
   }
 }
 @layer base {
+  h1{
+    font-family: "Syncopate", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 /* Global font family */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -53,7 +58,7 @@ a {
 @layer base {
   body {
     @apply text-gray-900 dark:text-gray-100;
-    background-color: #f8f8f8;
+    background-color: #eff0ea;
   }
 
 
