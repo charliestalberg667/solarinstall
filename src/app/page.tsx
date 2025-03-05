@@ -280,7 +280,7 @@ export default function Home() {
 
   const content = {
     fr: {
-      title: "Libérez la puissance du soleil ...",
+      title: "Libérez la puissance du soleil",
       intro: "Chez SolarInstall, nous rendons l’énergie solaire accessible à tous",
       cards: [
         {
@@ -323,7 +323,7 @@ export default function Home() {
       cta: "En savoir plus",
     },
     nl: {
-      title: "Ontketen de kracht van de zon met SolarInstall ...",
+      title: "Ontketen de kracht van de zon met SolarInstall",
       intro: "Bij SolarInstall maken we zonne-energie toegankelijk voor iedereen",
       cards: [
         {

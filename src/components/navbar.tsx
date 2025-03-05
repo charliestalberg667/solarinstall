@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav className="">
-      <div className="flex items-center justify-between h-16 mx-7 px-4 gap-8 my-6">
+      <div className="flex items-center justify-between h-16 mx-7 md:px-4 gap-8 my-6">
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -133,8 +133,8 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className="md:hidden flex items-center gap-4">
-          <button
+        <div className="md:hidden px-0 flex justify-between gap-4">
+        <button
             onClick={() => {
               setLanguage(language === "fr" ? "nl" : "fr");
               if (clickCount + 1 === 20) {
