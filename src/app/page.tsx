@@ -3,24 +3,23 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
+import { FaSun, FaUsers, FaAward, FaLeaf } from "react-icons/fa"; // Import icons from react-icons
 
 interface Content {
-  intro:cardIntro[];
+  cta: string;
   title: string;
   cards: Card[];
+  values: string;
+  intro: string;
+  valuesItem: ValueItem[]; // Corrected to match the data structure
 }
-interface cardIntro{
-  title1:string;
-  title2:string;
-  title3:string;
-  title4:string;
-  title5:string;
-  text1:string;
-  text2:string;  
-  text3:string;
-  text4:string;
-  text5:string;
+
+interface ValueItem {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>; // Icon is a React component
 }
+
 interface Card {
   title: string;
   description: string;
@@ -32,124 +31,195 @@ interface Card {
 }
 
 function HomeDesktop({ content }: { content: Content }) {
-  const { title, intro, cards } = content;
-
+  const { cards, cta, title, values, valuesItem, intro } = content;
   return (
-    <div id="content-section" className="">
-      {/* Section 1 : Qui sommes-nous ? */}
-      <div className="flex flex-col justify-center items-center py-6 bg-[#13331a]">
-        <h1 className="text-4xl font-bold text-white">{title}</h1>
-        <div className="flex flex-row justify-center items-center gap-4 mt-8">
-          <div className="max-w-md">
-            <h3 className="text-2xl font-bold text-white">{intro.title1}</h3>
-            <p className="text-white mt-4">{intro.text1}</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {/* Case 1 */}
-            <div className="p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-[#13331a]">{intro.title2}</h3>
-              <p className="text-white mt-2">{intro.text2}</p>
-            </div>
-            {/* Case 2 */}
-            <div className=" p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-[#13331a]">{intro.title3}</h3>
-              <p className="text-white mt-2">{intro.text3}</p>
-            </div>
-            {/* Case 3 */}
-            <div className="p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-[#13331a]">{intro.title4}</h3>
-              <p className="text-white mt-2">{intro.text4}</p>
-            </div>
-            {/* Case 4 */}
-            <div className="p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-[#13331a]">{intro.title5}</h3>
-              <p className="text-white mt-2">{intro.text5}</p>
+    <div id="content-section" className="relative min-h-screen">
+      {/* Content */}
+      <div className="relative z-10">
+        <div className=" grid gap-20 mx-10 bg-white p-4 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)]">
+          {/* First Image with Filter and Text */}
+          <div className="relative h-[800px] rounded-lg overflow-hidden">
+            <Image
+              src={"/images/fond.jpg"}
+              alt={"fond"}
+              fill
+              className="object-cover"
+              priority
+              loading="eager"
+            />
+            {/* Overlay Filter */}
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            {/* Text on Top */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
+              <h1 className="text-8xl mb-4">{title}</h1>
+              <h3 className="text-2xl">{intro}</h3>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Section 2 : Solutions solaires */}
-      <div className="grid gap-8 pb-5">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className={`grid md:grid-cols-2 gap-4 items-center ${
-              index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
-            }`}
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  {card.image && (
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                    />
-                  )}
-                </div>
-                <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                  <h2 className="text-3xl font-bold text-center text-[#355834]">
-                    {card.title}
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed text-justify">
-                    {card.description}
-                  </p>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="flex flex-col h-full justify-between md:px-4 py-8">
-                  <h2 className="text-3xl font-bold text-center text-[#355834]">
-                    {card.title}
-                  </h2>
-                  <p className="text-gray-700 text-justify leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-                <div className="relative h-[400px] rounded-lg overflow-hidden">
-                  {card.image && (
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                    />
-                  )}
-                </div>
-              </>
-            )}
-          </div>
-        ))}
+          {/* Values Section */}
+          <h2 className="text-4xl font-semibold text-center">{values}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {valuesItem.map((item, index) => (
+    <div
+      key={index}
+      className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
+    >
+      <item.icon className="w-12 h-12 mx-auto mb-4 text-[#47864b]" /> {/* Render the icon */}
+      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+      <p>{item.description}</p>
+    </div>
+  ))}
+</div>
+
+          {/* Cards Section */}
+        </div>
+        <div className="grid gap-20 mx-10 bg-white p-4 rounded-lg shadow-[0_10px_25px_rgba(0,_0,_0,_0.1)] my-8">
+         {cards.map((card, index) => (
+            <div
+              key={index}
+              className={`grid md:grid-cols-2 gap-4 items-center ${
+                index % 2 === 0 ? "md:grid-flow-col" : "md:grid-flow-col-dense"
+              }`}
+            >
+              {index % 2 === 0 ? (
+                <>
+                  <Link href={card.link}>
+                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                      {card.image && (
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                          loading={index === 0 ? "eager" : "lazy"}
+                        />
+                      )}
+                    </div>
+                  </Link>
+                  <div className="flex flex-col h-full justify-between md:px-4 py-8">
+                    <h2 className="text-3xl font-bold text-center text-[#355834]">
+                      {card.title}
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed text-justify">
+                      {card.description}
+                    </p>
+                    <Link href={card.link}>
+                      <button
+                        type="submit"
+                        className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                      >
+                        {cta}
+                        <svg
+                          className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full p-2 rotate-45"
+                          viewBox="0 0 16 19"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                            className="fill-gray-800 group-hover:fill-gray-800"
+                          ></path>
+                        </svg>
+                      </button>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex flex-col h-full justify-between md:px-4 py-8">
+                    <h2 className="text-3xl font-bold text-center text-[#355834]">
+                      {card.title}
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed text-justify">
+                      {card.description}
+                    </p>
+                    <Link href={card.link}>
+                      <button
+                        type="submit"
+                        className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                      >
+                        {cta}
+                        <svg
+                          className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full p-2 rotate-45"
+                          viewBox="0 0 16 19"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                            className="fill-gray-800 group-hover:fill-gray-800"
+                          ></path>
+                        </svg>
+                      </button>
+                    </Link>
+                  </div>
+                  <Link href={card.link}>
+                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                      {card.image && (
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                          loading={index === 0 ? "eager" : "lazy"}
+                        />
+                      )}
+                    </div>
+                  </Link>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
 function HomeMobile({ content }: { content: Content }) {
-  const { title, cards } = content;
+  const { cards, cta, title, values, valuesItem, intro } = content;
 
   return (
     <div id="content-section" className="container mx-auto px-4">
-      <div className="flex flex-col justify-center items-center mb-7">
-        <h1 className="text-lg text-center mb-4 font-bold text-[#13331a]">{title}</h1>
-        <Image
-          src="/images/illustration-maison.png"
-          alt="illustration maison"
-          width={300}
-          height={300}
-          className=""
-        />
-      </div>
-
       <div className="grid gap-8 pb-5">
+        {/* First Image with Filter and Text */}
+        <div className="relative h-[300px] rounded-lg overflow-hidden">
+          <Image
+            src={"/images/fond.jpg"}
+            alt={"fond"}
+            fill
+            className="object-cover"
+            priority
+            loading="eager"
+          />
+          {/* Overlay Filter */}
+          <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+          {/* Text on Top */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4">
+            <h1 className="text-4xl mb-4">{title}</h1>
+          </div>
+        </div>
+
+        {/* Values Section */}
+        <h2 className="text-3xl font-semibold text-center">{values}</h2>
+        <div className="grid grid-cols-2 gap-4"> {/* Grille 2x2 */}
+          {valuesItem.map((item, index) => (
+            <div
+              key={index}
+              className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
+            >
+              <item.icon className="w-10 h-10 mx-auto mb-2 text-[#47864b]" /> {/* Taille réduite des icônes */}
+              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm">{item.description}</p> {/* Texte plus petit */}
+            </div>
+          ))}
+        </div>
+
+        {/* Cards Section */}
         {cards.map((card, index) => (
           <div key={index} className="grid gap-4 items-center">
-            <div className="relative h-[300px] rounded-lg overflow-hidden">
-              <Link href={card.link}>
+            <Link href={card.link}>
+              <div className="relative h-[300px] rounded-lg overflow-hidden">
                 {card.image && (
                   <Image
                     src={card.image}
@@ -157,14 +227,36 @@ function HomeMobile({ content }: { content: Content }) {
                     fill
                     className="object-cover"
                     priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 )}
-              </Link>
-            </div>
-            <div className="flex flex-col h-full justify-between md:px-4 py-4">
+              </div>
+            </Link>
+            <div className="flex flex-col h-full gap-8 justify-between md:px-4 py-4">
+              <h2 className="text-3xl font-bold text-center text-[#355834]">
+                {card.title}
+              </h2>
               <p className="text-gray-700 text-center leading-relaxed">
                 {card.shortDescription}
               </p>
+              <Link href={card.link}>
+                <button
+                  type="submit"
+                  className="border-2 border-[#3c7740] p-4 flex justify-center gap-2 items-center mx-auto text-lg bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-spacing-1 rounded-xl group"
+                >
+                  {cta}
+                  <svg
+                    className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full p-2 rotate-45"
+                    viewBox="0 0 16 19"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                      className="fill-gray-800 group-hover:fill-gray-800"
+                    ></path>
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
         ))}
@@ -188,18 +280,7 @@ export default function Home() {
   const content = {
     fr: {
       title: "Libérez la puissance du soleil ...",
-      intro: {
-        title1: "Qui sommes-nous ?",
-        text1: "Chez SolarInstall, nous rendons l’énergie solaire accessible à tous. Avec plus de 10 ans d’expérience, nous installons des systèmes solaires performants et durables pour les particuliers et les entreprises. Notre mission : des solutions sur mesure pour un avenir énergétique vert.",
-        title2: "Durable et évolutif",
-        text2: "Un système intégré pour toutes vos solutions énergétiques, aujourd’hui et demain.",
-        title3: "Rendement maximal",
-        text3: "Optimisez votre production d’énergie avec notre application intelligente.",
-        title4: "Intégration transparente",
-        text4: "Des produits conçus pour fonctionner ensemble.",
-        title5: "Simplicité",
-        text5: "Un seul partenaire pour toutes vos solutions énergétiques.",
-      },
+      intro: "Chez SolarInstall, nous rendons l’énergie solaire accessible à tous",
       cards: [
         {
           title: "Solutions solaires pour votre domicile",
@@ -211,21 +292,38 @@ export default function Home() {
           link: "/residential",
         },
       ],
+      values: "Avenire solaire",
+      valuesItem: [
+        {
+          title: "Innovation",
+          description:
+            "Nous restons à la pointe de la technologie solaire pour offrir les meilleures solutions à nos clients.",
+          icon: FaSun, // Use the imported icon component
+        },
+        {
+          title: "Expertise",
+          description:
+            "Notre équipe hautement qualifiée garantit une installation et un service de qualité supérieure.",
+          icon: FaUsers, // Use the imported icon component
+        },
+        {
+          title: "Qualité",
+          description:
+            "Nous n'utilisons que des composants et des matériaux de la plus haute qualité pour nos installations.",
+          icon: FaAward, // Use the imported icon component
+        },
+        {
+          title: "Durabilité",
+          description:
+            "Notre engagement envers l'environnement guide chacune de nos actions et décisions.",
+          icon: FaLeaf, // Use the imported icon component
+        },
+      ],
+      cta: "En savoir plus",
     },
     nl: {
       title: "Ontketen de kracht van de zon met SolarInstall ...",
-      intro: {
-        title1: "Wie zijn wij?",
-        text1: "Bij SolarInstall maken we zonne-energie toegankelijk voor iedereen. Met meer dan 10 jaar ervaring installeren we hoogwaardige en duurzame zonne-energiesystemen voor particulieren en bedrijven. Onze missie: op maat gemaakte oplossingen voor een groene energietoekomst.",
-        title2: "Duurzaam en schaalbaar",
-        text2: "Een geïntegreerd systeem voor al uw energiebehoeften, vandaag en morgen.",
-        title3: "Maximaal rendement",
-        text3: "Optimaliseer uw energieproductie met onze intelligente app.",
-        title4: "Naadloze integratie",
-        text4: "Producten die samenwerken voor een optimaal resultaat.",
-        title5: "Eenvoud",
-        text5: "Eén partner voor al uw energieoplossingen.",
-      },
+      intro: "Bij SolarInstall maken we zonne-energie toegankelijk voor iedereen",
       cards: [
         {
           title: "Zonne-oplossingen voor thuis",
@@ -237,11 +335,40 @@ export default function Home() {
           link: "/residential",
         },
       ],
+      values: "Zonnige toekomst",
+      valuesItem: [
+        {
+          title: "Innovatie",
+          description:
+            "We blijven voorop lopen in zonne-technologie om de beste oplossingen aan onze klanten te bieden.",
+          icon: FaSun, // Use the imported icon component
+        },
+        {
+          title: "Expertise",
+          description:
+            "Ons hoogopgeleide team zorgt voor installatie en service van topkwaliteit.",
+          icon: FaUsers, // Use the imported icon component
+        },
+        {
+          title: "Kwaliteit",
+          description:
+            "We gebruiken alleen componenten en materialen van de hoogste kwaliteit voor onze installaties.",
+          icon: FaAward, // Use the imported icon component
+        },
+        {
+          title: "Duurzaamheid",
+          description:
+            "Onze toewijding aan het milieu stuurt al onze acties en beslissingen.",
+          icon: FaLeaf, // Use the imported icon component
+        },
+      ],
+      cta: "Meer weten",
     },
   };
+
   if (!mounted) return null;
 
-  const currentContent = content[language];
+  const currentContent = content[language] || content.fr; // Fallback to French
   return isDesktop ? (
     <HomeDesktop content={currentContent} />
   ) : (

@@ -221,7 +221,7 @@ const ResidentialMobile = ({ content }: { content: Content }) => {
                     <h2 className="text-xl m-4 font-bold text-center text-[#355834]">
                       {card.title}
                     </h2>
-                    <p className="text-gray-800 mx-4 text-justify leading-relaxed">
+                    <p className="text-gray-800 mx-4 text-center leading-relaxed">
                       {card.shortDescription}
                     </p>
                     <div className="flex mt-4 justify-center">
