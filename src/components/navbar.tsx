@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[#3c7740] hover:underline hover:text-[#355834] px-3 py-2 rounded-md text-base font-semibold"
+                  className="text-[#3c7740] hover:text-[#355834] px-3 py-2 rounded-md text-base font-semibold"
                 >
                   {item.label}
                 </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
                 className={`px-3 py-2 rounded-md text-base font-semibold ${
                   activeItem === item.href
                     ? "bg-[#337a3b] text-white" // Active state styles
-                    : "text-[#3c7740] hover:underline hover:text-[#355834]" // Default state styles
+                    : "text-[#3c7740] hover:text-[#355834]" // Default state styles
                 }`}
                 onClick={() => setActiveItem(item.href)}
               >
