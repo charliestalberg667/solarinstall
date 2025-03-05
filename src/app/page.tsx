@@ -177,7 +177,7 @@ function HomeDesktop({ content }: { content: Content }) {
 }
 
 function HomeMobile({ content }: { content: Content }) {
-  const { cards, cta, title, values, valuesItem, intro } = content;
+  const { cards, cta, title, values, valuesItem } = content;
 
   return (
     <div id="content-section" className="container mx-auto px-4">
