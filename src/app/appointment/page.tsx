@@ -136,7 +136,7 @@ export default function Appointment() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="bg-white border-[1.5px] border-[#97C2AC] rounded-full px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
+            className="bg-white border-[1.5px] border-[#97C2AC] rounded-lg px-4 py-3 focus:ring-2 focus:border-[#97C2AC]/80 transition-all duration-300 ease-in-out"
           />
 
           <Input
