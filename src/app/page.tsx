@@ -184,14 +184,15 @@ function HomeMobile({ content }: { content: Content }) {
       <div className="grid gap-8 pb-5">
         {/* First Image with Filter and Text */}
         <div className="relative h-[300px] rounded-lg overflow-hidden">
-          <Image
-            src={"/images/fond.jpg"}
-            alt={"fond"}
-            fill
-            className="object-cover"
-            priority
-            loading="eager"
-          />
+        <Image
+  src="/images/fond.jpg"
+  alt="fond"
+  fill
+  className="object-cover"
+  priority
+  loading="eager"
+  sizes="(max-width: 768px) 100vw, 50vw"
+/>
           {/* Overlay Filter */}
           <div className="absolute inset-0 bg-black bg-opacity-70"></div>
           {/* Text on Top */}
