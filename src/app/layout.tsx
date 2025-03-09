@@ -53,6 +53,15 @@ export default function RootLayout({
             </div>
             <Toaster />
           </LanguageProvider>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-05CXENLVGM"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-05CXENLVGM');
+          </script>
+
         </body>
       </html>
     </StrictMode>
