@@ -61,7 +61,7 @@ const Navbar = () => {
                 height={30}
                 className="mr-2"
               />
-              <span className="text-xl font-bold text-black">SolarInstall</span>
+              <span className="text-xl font-bold navEllement text-black">SolarInstall</span>
             </Link>
           </div>
           <div className="hidden md:flex justify-center">
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-black hover:underline px-3 py-2 rounded-md text-base font-semibold"
+                  className="navEllement text-black hover:bg-[#D7EEDA] px-3 py-2 rounded-xl text-base font-semibold"
                 >
                   {item.label}
                 </Link>
@@ -84,10 +84,10 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2  text-base font-semibold ${
+                className={`px-3 py-2 navEllement text-base font-semibold ${
                   activeItem === item.href
                     ? "bg-[#337a3b] text-white border-2 rounded-xl border-[#3c7740]" // Active state styles
-                    : "text-black hover:underline" // Default state styles
+                    : "text-black " // Default state styles
                 }`}
                 onClick={() => setActiveItem(item.href)}
               >
