@@ -61,7 +61,7 @@ const Navbar = () => {
                 height={30}
                 className="mr-2"
               />
-              <span className="text-xl font-bold text-[#254029]">SolarInstall</span>
+              <span className="text-xl font-bold text-black">SolarInstall</span>
             </Link>
           </div>
           <div className="hidden md:flex justify-center">
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[#3c7740] hover:text-[#355834] px-3 py-2 rounded-md text-base font-semibold"
+                  className="text-black hover:underline px-3 py-2 rounded-md text-base font-semibold"
                 >
                   {item.label}
                 </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
                 className={`px-3 py-2  text-base font-semibold ${
                   activeItem === item.href
                     ? "bg-[#337a3b] text-white border-2 rounded-xl border-[#3c7740]" // Active state styles
-                    : "text-[#3c7740] hover:text-[#355834]" // Default state styles
+                    : "text-black hover:underline" // Default state styles
                 }`}
                 onClick={() => setActiveItem(item.href)}
               >
@@ -98,7 +98,7 @@ const Navbar = () => {
           <Link href="https://www.google.be/maps/place/SolarStock/@50.780509,4.2721875,46m/data=!3m1!1e3!4m6!3m5!1s0x47c3c723c65cb223:0x53cd5c047a55f3a6!8m2!3d50.7806139!4d4.2723163!16s%2Fg%2F11kjjtdc83?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D">
             <button
               type="submit"
-              className="hidden md:flex border-2 border-[#3c7740] p-4 justify-center gap-2 items-center text-base bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-[0.55rem] before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-spacing-1 rounded-xl group"
+              className="hidden md:flex border-2 border-[#3c7740] p-4 justify-center gap-2 items-center text-base bg-gray backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-[0.55rem] before:bg-[#3c7740] hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 pl-3 pr-1 py-1 overflow-hidden border-spacing-1 rounded-xl group"
             >
               {exploreShowroom}
               <svg
@@ -180,7 +180,7 @@ const Navbar = () => {
                   className={`flex-1 text-center px-3 py-2 rounded-md text-base font-medium ${
                     activeItem === item.href
                       ? "bg-[#337a3b] text-white" // Active state styles
-                      : "text-[#3c7740] hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
+                      : "text-black hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
                   }`}
                   onClick={() => {
                     setActiveItem(item.href);
@@ -195,7 +195,7 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[#3c7740] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+                className="text-black dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
                 onClick={toggleMenu}
               >
                 {item.label}

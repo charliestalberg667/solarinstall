@@ -73,7 +73,7 @@ function HomeDesktop({ content }: { content: Content }) {
 
           {/* Cards Section */}
         </div>
-        <div className="grid gap-20 mx-10 bg-white p-4 rounded-lg shadow-[0_10px_25px_rgba(0,_0,_0,_0.1)] my-8">
+        <div className="grid gap-20 mx-7 bg-white p-4 rounded-lg shadow-[0_10px_25px_rgba(0,_0,_0,_0.1)] my-8">
          {cards.map((card, index) => (
             <div
               key={index}
