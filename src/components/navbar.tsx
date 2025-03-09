@@ -201,20 +201,7 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            {/* Add "Particulier" and "Entreprise" on the same line */}
             
-            {/* Add language toggle on the same line */}
-            <div className="">
-              <button
-                onClick={() => {
-                  setLanguage(language === "fr" ? "nl" : "fr");
-                  toggleMenu();
-                }}
-                className="flex-1 text-center px-3 py-2 rounded-md text-base font-medium text-[#3c7740] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-              >
-                {language === "fr" ? "Nederlands" : "Français"}
-              </button>
-            </div>
           </div>
         </div>
       )}

@@ -59,6 +59,9 @@ export default {
       animation: {
         "spin-slow": "spin 3s linear infinite",
       },
+      screens: {
+        'md': '1070px', // Change the `md` breakpoint to 900px
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
