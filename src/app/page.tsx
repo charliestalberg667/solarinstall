@@ -36,7 +36,7 @@ function HomeDesktop({ content }: { content: Content }) {
     <div id="content-section" className="relative min-h-screen">
       {/* Content */}
       <div className="relative z-10">
-        <div className=" grid gap-20 mx-10 bg-white p-4 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)]">
+        <div className=" grid gap-20 mx-7 bg-white p-4 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)]">
           {/* First Image with Filter and Text */}
           <div className="relative h-[800px] rounded-lg overflow-hidden">
             <Image
