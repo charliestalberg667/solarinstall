@@ -50,6 +50,25 @@ const Navbar = () => {
 
   return (
     <nav className="">
+      <div className="md:hidden h-[4.5vh] w-[100vh]">
+      {BuisnessCheck.map((item) => (
+      <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`flex-1 text-center px-[7vh] pb-2 pt-4 text-base font-base ${
+                    activeItem === item.href
+                      ? "bg-[#337a3b] text-white" // Active state styles
+                      : "text-black hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
+                  }`}
+                  onClick={() => {
+                    setActiveItem(item.href);
+                    toggleMenu();
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+      </div>
       <div className="flex items-center justify-between h-16 mx-7 gap-8 my-4">
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
@@ -172,25 +191,6 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <div className="flex space-x-2">
-              {BuisnessCheck.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex-1 text-center px-3 py-2 rounded-md text-base font-medium ${
-                    activeItem === item.href
-                      ? "bg-[#337a3b] text-white" // Active state styles
-                      : "text-black hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
-                  }`}
-                  onClick={() => {
-                    setActiveItem(item.href);
-                    toggleMenu();
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
             {navItems.map((item) => (
               <Link
                 key={item.href}
