@@ -50,26 +50,27 @@ const Navbar = () => {
 
   return (
     <nav className="">
-      <div className="md:hidden h-[4.5vh] w-[100vh]">
-      {BuisnessCheck.map((item) => (
-      <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex-1 text-center px-[7vh] pb-2 pt-4 text-base font-base ${
-                    activeItem === item.href
-                      ? "bg-[#337a3b] text-white" // Active state styles
-                      : "text-black hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
-                  }`}
-                  onClick={() => {
-                    setActiveItem(item.href);
-                    toggleMenu();
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+    <div className="md:hidden w-full flex ">
+    
+  {BuisnessCheck.map((item) => (
+    <Link
+      key={item.href}
+      href={item.href}
+      className={`flex-1 flex items-center justify-center text-center pb-1 pt-1 text-sm font-base h-full ${
+        activeItem === item.href
+          ? "bg-[#337a3b] text-white" // Active state styles
+          : "text-black hover:bg-gray-200 dark:hover:bg-gray-700" // Default state styles
+      }`}
+      onClick={() => {
+        setActiveItem(item.href);
+        toggleMenu();
+      }}
+    >
+      {item.label}
+    </Link>
+  ))}
       </div>
-      <div className="flex items-center justify-between h-16 mx-7 gap-8 my-4">
+      <div className="flex items-center justify-between h-16 mx-7 gap-8 my-4 mt-0 md:mt-4">
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
