@@ -62,7 +62,7 @@ function HomeDesktop({ content }: { content: Content }) {
   {valuesItem.map((item, index) => (
     <div
       key={index}
-      className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
+      className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
     >
       <item.icon className="w-12 h-12 mx-auto mb-4 text-[#47864b]" /> {/* Render the icon */}
       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
@@ -207,7 +207,7 @@ function HomeMobile({ content }: { content: Content }) {
           {valuesItem.map((item, index) => (
             <div
               key={index}
-              className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
+              className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-[0_0px_25px_rgba(0,_0,_0,_0.1)] text-center transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-[0_0px_35px_rgba(0,_0,_0,_0.1)]"
             >
               <item.icon className="w-10 h-10 mx-auto mb-2 text-[#47864b]" /> {/* Taille réduite des icônes */}
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
@@ -362,6 +362,7 @@ export default function Home() {
             "Onze toewijding aan het milieu stuurt al onze acties en beslissingen.",
           icon: FaLeaf, // Use the imported icon component
         },
+        
       ],
       cta: "Meer weten",
     },

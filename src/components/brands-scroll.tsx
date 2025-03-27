@@ -38,7 +38,7 @@ export function BrandsScroll() {
   if (!mounted) return null;
 
   return (
-    <div className="py-3 bg-[#ededed] mt-24 ">
+    <div className="py-3 bg-[#ededed] ">
       <Marquee gradient={false} speed={30}>
         {brands.map((brand, index) => (
           <div
